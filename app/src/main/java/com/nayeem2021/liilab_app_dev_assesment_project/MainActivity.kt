@@ -1,10 +1,6 @@
 package com.nayeem2021.liilab_app_dev_assesment_project
 
-import android.content.Context
 import android.os.Bundle
-import android.util.AttributeSet
-import android.util.Log
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.nayeem2021.liilab_app_dev_assesment_project.databinding.ActivityMainBinding
