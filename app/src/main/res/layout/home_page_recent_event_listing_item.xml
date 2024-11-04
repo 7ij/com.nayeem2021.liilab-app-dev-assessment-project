@@ -16,7 +16,7 @@
         app:srcCompat="@drawable/simple_recent_event_icon" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/home_page_recent_event_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -27,7 +27,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/textView10"
+        android:id="@+id/home_page_recent_event_content"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
@@ -39,8 +39,8 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintStart_toStartOf="@+id/home_page_recent_event_name"
+        app:layout_constraintTop_toBottomOf="@+id/home_page_recent_event_name" />
 
     <View
         android:id="@+id/divider2"
@@ -50,7 +50,7 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/home_page_recent_event_content" />
 
     <TextView
         android:id="@+id/textView11"
@@ -58,13 +58,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:text="seen"
-        app:layout_constraintBottom_toBottomOf="@+id/textView12"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
-        app:layout_constraintTop_toTopOf="@+id/textView12"
+        app:layout_constraintBottom_toBottomOf="@+id/home_page_recent_event_view_count"
+        app:layout_constraintStart_toEndOf="@+id/home_page_recent_event_view_count"
+        app:layout_constraintTop_toTopOf="@+id/home_page_recent_event_view_count"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/home_page_recent_event_view_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
