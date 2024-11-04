@@ -1,5 +1,6 @@
 package com.nayeem2021.liilab_app_dev_assesment_project
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +31,10 @@ class HomePageRecyclerViewAdapter(private val dataSet: List<String>) :
                 val view = LayoutInflater.from(parent.context).inflate(
                     R.layout.home_page_create_post, parent, false
                 )
+                parent.findViewById<View>(R.id.whats_happening_button).setOnClickListener {
+                    val intent = Intent(parent.context, CreatePostActivity::class.java)
+                    parent.context.startActivity(intent)
+                }
                 return HomePageViewHolder(view)
             }
             2 -> {
