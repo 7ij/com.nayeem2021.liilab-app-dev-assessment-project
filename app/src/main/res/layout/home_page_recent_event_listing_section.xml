@@ -41,5 +41,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        tools:listitem="@layout/home_page_recent_event_listing_item"
+        tools:itemCount="2"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
