@@ -18,23 +18,6 @@
         app:menu="@menu/bottom_nav_menu"
         app:labelVisibilityMode="labeled"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/home_page_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:visibility="gone"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:itemCount="5"
-        tools:listitem="@layout/home_page_stories"
-        tools:visibility="gone">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"

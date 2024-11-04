@@ -10,11 +10,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initViews()
-    }
-
-    private fun initViews() {
-        val dataSet = listOf("a", "b")
-        binding.homePageRecyclerView.adapter = HomePageRecyclerViewAdapter(dataSet)
     }
 }
