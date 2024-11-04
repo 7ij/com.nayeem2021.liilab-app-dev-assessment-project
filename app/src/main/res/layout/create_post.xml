@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="Feeling"
+        android:text="Photo/Video"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="@+id/imageView4" />
@@ -20,27 +20,20 @@
         android:id="@+id/imageView"
         android:layout_width="32dp"
         android:layout_height="32dp"
+        app:circularflow_defaultRadius="360dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/create_post_user_avatar"
-        android:background="@drawable/create_post_user_avatar_background"
-        android:clipToOutline="true"
-        android:scaleType="centerCrop"/>
+        app:srcCompat="@drawable/create_post_user_avatar" />
 
     <EditText
         android:id="@+id/editTextTextMultiLine"
         android:layout_width="0dp"
         android:layout_height="170dp"
         android:layout_marginStart="14dp"
-        android:background="@drawable/create_post_content_background"
         android:ems="10"
         android:gravity="start|top"
         android:hint="What's happening?"
         android:inputType="textMultiLine"
-        android:paddingLeft="10dp"
-        android:paddingTop="8dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="8dp"
         app:circularflow_radiusInDP="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -60,11 +53,10 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Photo/Video"
+        android:text="Feeling"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        tools:layout_editor_absoluteX="24dp" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -82,7 +74,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/photo_video_icon" />
+        app:srcCompat="@drawable/feeling_icon" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -91,7 +83,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:srcCompat="@drawable/feeling_icon" />
+        app:srcCompat="@drawable/photo_video_icon" />
 
     <Button
         android:id="@+id/button"
