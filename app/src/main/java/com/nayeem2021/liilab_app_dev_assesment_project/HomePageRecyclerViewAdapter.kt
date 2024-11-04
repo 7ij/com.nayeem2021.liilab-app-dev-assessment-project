@@ -5,6 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
+enum class SectionType {
+    RECENT_EVENT_SECTION
+}
+
 class HomePageRecyclerViewAdapter(private val dataSet: List<String>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemViewType(position: Int): Int {
@@ -28,10 +32,33 @@ class HomePageRecyclerViewAdapter(private val dataSet: List<String>) :
                 return HomePageViewHolder(view)
             }
 
-            else -> {
+            1 -> {
                 val view = LayoutInflater.from(parent.context).inflate(
                     R.layout.home_page_create_post, parent, false
                 )
+                return HomePageViewHolder(view)
+            }
+
+            else -> {
+                val view = LayoutInflater.from(parent.context).inflate(
+                    R.layout.home_page_recent_event_listing_section, parent, false
+                )
+                val rv = view.findViewById<RecyclerView>(R.id.recent_event_recycler_view)
+                val dataSet: List<HomePageRecentEventDataModel> = listOf(
+                    HomePageRecentEventDataModel(
+                        "Graduation Ceremony",
+                        "The graduation ceremony is also sometimes called. The graduation " +
+                                "ceremony is also sometimes called...",
+                        8
+                    ),
+                    HomePageRecentEventDataModel(
+                        "Photography Ideas",
+                        "Reflections. Reflections work because they can create...",
+                        11
+                    )
+                )
+                rv.adapter = HomePageRecentEventRecyclerViewAdapter(dataSet)
+                rv.addItemDecoration(PaddingInBetweenRecyclerViewDecorator(14))
                 return HomePageViewHolder(view)
             }
         }
