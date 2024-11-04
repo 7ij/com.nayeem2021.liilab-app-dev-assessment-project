@@ -1,9 +1,7 @@
 package com.nayeem2021.liilab_app_dev_assesment_project
 
-import android.content.Context
 import android.content.res.Resources
 import android.graphics.Rect
-import android.util.DisplayMetrics
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
