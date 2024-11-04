@@ -52,6 +52,7 @@ class HomePageRecyclerViewAdapter(private val dataSet: List<String>) :
                     )
                 )
                 rv.adapter = HomePageRecentEventRecyclerViewAdapter(dataSet)
+                rv.addItemDecoration(PaddingInBetweenRecyclerViewDecorator(14))
                 return HomePageViewHolder(view)
             }
         }
