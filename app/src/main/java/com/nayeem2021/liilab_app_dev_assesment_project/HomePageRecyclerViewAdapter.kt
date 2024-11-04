@@ -22,9 +22,15 @@ class HomePageRecyclerViewAdapter(private val dataSet: List<String>) :
                 return HomePageViewHolder(view)
             }
 
-            else -> {
+            1 -> {
                 val view = LayoutInflater.from(parent.context).inflate(
                     R.layout.home_page_create_post, parent, false
+                )
+                return HomePageViewHolder(view)
+            }
+            else -> {
+                val view = LayoutInflater.from(parent.context).inflate(
+                    R.layout.home_page_birthday_section, parent, false
                 )
                 return HomePageViewHolder(view)
             }
