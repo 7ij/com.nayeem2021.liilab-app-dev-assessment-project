@@ -19,12 +19,6 @@ class HomePageRecyclerViewAdapter(private val dataSet: List<String>) :
         when (viewType) {
             0 -> {
                 val view = LayoutInflater.from(parent.context).inflate(
-                    R.layout.feed_header_section, parent, false
-                )
-                return HomePageViewHolder(view)
-            }
-            1 -> {
-                val view = LayoutInflater.from(parent.context).inflate(
                     R.layout.home_page_stories, parent, false
                 )
                 val rv = view.findViewById<RecyclerView>(R.id.home_page_stories_recycler_view)
