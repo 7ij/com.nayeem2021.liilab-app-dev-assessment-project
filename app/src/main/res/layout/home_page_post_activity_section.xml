@@ -42,7 +42,7 @@
         app:srcCompat="@drawable/create_post_user_avatar" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/tv_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -65,9 +65,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="2dp"
         android:text="3"
-        app:layout_constraintBottom_toBottomOf="@+id/textView11"
-        app:layout_constraintEnd_toStartOf="@+id/textView11"
-        app:layout_constraintTop_toTopOf="@+id/textView11" />
+        app:layout_constraintBottom_toBottomOf="@+id/tv_sign_in"
+        app:layout_constraintEnd_toStartOf="@+id/tv_sign_in"
+        app:layout_constraintTop_toTopOf="@+id/tv_sign_in" />
 
     <TextView
         android:id="@+id/textView14"

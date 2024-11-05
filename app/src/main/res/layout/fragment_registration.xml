@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".pages.RegistrationActivity">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView8"
@@ -38,11 +37,12 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="30dp"
-        android:paddingTop="24dp"
-        android:paddingBottom="62dp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9">
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        android:background="@drawable/circular_rectengular_white_background_radius_6dp">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -212,7 +212,7 @@
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/tv_sign_in"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"

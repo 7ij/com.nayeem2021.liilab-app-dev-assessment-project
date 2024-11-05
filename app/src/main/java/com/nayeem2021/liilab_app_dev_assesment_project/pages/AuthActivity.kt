@@ -18,5 +18,9 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initView()
+    }
+
+    private fun initView() {
     }
 }
