@@ -1,16 +1,21 @@
 package com.nayeem2021.liilab_app_dev_assesment_project
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 
 enum class SectionType {
     RECENT_EVENT_SECTION
 }
 
-class HomePageRecyclerViewAdapter(private val dataSet: List<String>) :
+class HomePageRecyclerViewAdapter(
+    private val dataSet: List<String>,
+    private val fragmentManager: FragmentManager
+) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemViewType(position: Int): Int {
         return position
@@ -31,18 +36,19 @@ class HomePageRecyclerViewAdapter(private val dataSet: List<String>) :
                 val view = LayoutInflater.from(parent.context).inflate(
                     R.layout.home_page_create_post, parent, false
                 )
-                parent.findViewById<View>(R.id.whats_happening_button).setOnClickListener {
-                    val intent = Intent(parent.context, CreatePostActivity::class.java)
-                    parent.context.startActivity(intent)
+                view.findViewById<View>(R.id.whats_happening_button).setOnClickListener {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, CreatePostFragment()).commit()
                 }
                 return HomePageViewHolder(view)
             }
+
             2 -> {
                 val view = LayoutInflater.from(parent.context).inflate(
                     R.layout.home_page_birthday_section, parent, false
                 )
                 return HomePageViewHolder(view)
             }
+
             else -> {
                 val view = LayoutInflater.from(parent.context).inflate(
                     R.layout.home_page_recent_event_listing_section, parent, false
