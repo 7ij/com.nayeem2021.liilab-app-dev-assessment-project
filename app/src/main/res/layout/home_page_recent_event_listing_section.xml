@@ -10,7 +10,7 @@
     android:background="@drawable/home_page_any_item_background">
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/home_page_post_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Recent Event"
@@ -33,7 +33,7 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/home_page_post_user_name" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recent_event_recycler_view"

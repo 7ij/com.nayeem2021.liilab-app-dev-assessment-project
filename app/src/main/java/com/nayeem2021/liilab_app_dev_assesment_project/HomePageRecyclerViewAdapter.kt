@@ -7,13 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.jvm.Throws
 
 enum class SectionType {
     RECENT_EVENT_SECTION
 }
 
 class HomePageRecyclerViewAdapter(
-    private val dataSet: List<String>,
+    private val dataSet: List<Any>,
     private val fragmentManager: FragmentManager
 ) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -37,7 +38,8 @@ class HomePageRecyclerViewAdapter(
                     R.layout.home_page_create_post, parent, false
                 )
                 view.findViewById<View>(R.id.whats_happening_button).setOnClickListener {
-                    fragmentManager.beginTransaction().replace(R.id.fragment_container, CreatePostFragment()).commit()
+                    fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, CreatePostFragment()).commit()
                 }
                 return HomePageViewHolder(view)
             }
@@ -49,7 +51,7 @@ class HomePageRecyclerViewAdapter(
                 return HomePageViewHolder(view)
             }
 
-            else -> {
+            3 -> {
                 val view = LayoutInflater.from(parent.context).inflate(
                     R.layout.home_page_recent_event_listing_section, parent, false
                 )
@@ -71,6 +73,23 @@ class HomePageRecyclerViewAdapter(
                 rv.addItemDecoration(PaddingInBetweenRecyclerViewDecorator(14))
                 return HomePageViewHolder(view)
             }
+
+            4 -> {
+                val view = LayoutInflater.from(parent.context).inflate(
+                    R.layout.home_page_post,
+                    parent, false
+                )
+                val commentDataSet = dataSet[4] as List<CommentModel>
+                if(commentDataSet.isNotEmpty()) {
+                    val commentRv = view.findViewById<RecyclerView>(R.id.rvCommentSection)
+                    commentRv.adapter = CommentRecyclerViewAdapter(commentDataSet)
+                }
+                return HomePageViewHolder(view)
+            }
+
+            else -> {
+                throw IllegalArgumentException("Unknown type of layout in home page recycler view")
+            }
         }
     }
 
@@ -82,7 +101,6 @@ class HomePageRecyclerViewAdapter(
 
     }
 
-    class HomePageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
+    class HomePageViewHolder(val itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 }
