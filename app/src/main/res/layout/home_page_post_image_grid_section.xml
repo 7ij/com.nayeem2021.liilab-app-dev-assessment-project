@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="164dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/imageView12"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView12"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12"
+        app:srcCompat="@drawable/home_page_post_sample_image_1"
+        tools:showIn="@layout/home_page_post" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="164dp"
+        android:layout_height="189dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home_page_post_sample_image_1"
+        tools:showIn="@layout/home_page_post" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="164dp"
+        android:layout_height="89dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/home_page_post_sample_image_1"
+        tools:showIn="@layout/home_page_post" />
+</androidx.constraintlayout.widget.ConstraintLayout>

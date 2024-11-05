@@ -71,6 +71,14 @@ class HomePageRecyclerViewAdapter(
                 rv.addItemDecoration(PaddingInBetweenRecyclerViewDecorator(14))
                 return HomePageViewHolder(view)
             }
+
+            else -> {
+                val view = LayoutInflater.from(parent.context).inflate(
+                    R.layout.home_page_post,
+                    parent, false
+                )
+                return HomePageViewHolder(view)
+            }
         }
     }
 

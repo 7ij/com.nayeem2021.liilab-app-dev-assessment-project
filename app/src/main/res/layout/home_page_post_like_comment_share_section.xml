@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_page_post_like_comment_share"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/home_page_like_comment_share_top_horizontal_divider"
+    tools:showIn="@layout/home_page_post">
+
+    <Button
+        android:id="@+id/home_page_post_liek_button"
+        android:layout_weight="0"
+        android:gravity="center_vertical|start"
+        android:text="Like"
+        app:cornerRadius="0dp"
+        app:icon="@drawable/heart"
+        app:iconPadding="6dp"
+        app:iconTint="#4E5D78"
+        style="@style/style_icon_and_text_button_no_background" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="0dp" />
+
+    <Button
+        android:id="@+id/home_page_post_comment_button"
+        android:layout_weight="0"
+        android:gravity="center_vertical|start"
+        android:text="Comment"
+        app:cornerRadius="0dp"
+        app:icon="@drawable/comment"
+        app:iconPadding="6dp"
+        app:iconTint="#4E5D78"
+        style="@style/style_icon_and_text_button_no_background" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="0dp" />
+
+    <Button
+        android:id="@+id/home_page_post_share_button"
+        android:layout_weight="0"
+        android:gravity="center_vertical|end"
+        app:iconGravity="textStart"
+        android:text="Share"
+        app:cornerRadius="0dp"
+        app:icon="@drawable/share"
+        app:iconPadding="6dp"
+        app:iconTint="#4E5D78"
+        style="@style/style_icon_and_text_button_no_background" />
+</LinearLayout>
