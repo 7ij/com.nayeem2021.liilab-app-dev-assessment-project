@@ -2,4 +2,5 @@
     <string name="app_name">Liilab Assessment App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_page_post_main_content_place_holder_text">If you think adventure is dangerous, try routine, it’s lethal Paulo Coelho! Good morning all friends.</string>
 </resources>

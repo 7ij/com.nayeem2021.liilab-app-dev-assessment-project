@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.jvm.Throws
 
 enum class SectionType {
     RECENT_EVENT_SECTION
@@ -37,7 +38,8 @@ class HomePageRecyclerViewAdapter(
                     R.layout.home_page_create_post, parent, false
                 )
                 view.findViewById<View>(R.id.whats_happening_button).setOnClickListener {
-                    fragmentManager.beginTransaction().replace(R.id.fragment_container, CreatePostFragment()).commit()
+                    fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, CreatePostFragment()).commit()
                 }
                 return HomePageViewHolder(view)
             }
@@ -49,7 +51,7 @@ class HomePageRecyclerViewAdapter(
                 return HomePageViewHolder(view)
             }
 
-            else -> {
+            3 -> {
                 val view = LayoutInflater.from(parent.context).inflate(
                     R.layout.home_page_recent_event_listing_section, parent, false
                 )
@@ -72,12 +74,41 @@ class HomePageRecyclerViewAdapter(
                 return HomePageViewHolder(view)
             }
 
-            else -> {
+            4 -> {
                 val view = LayoutInflater.from(parent.context).inflate(
                     R.layout.home_page_post,
                     parent, false
                 )
+                val commentRv = view.findViewById<RecyclerView>(R.id.rvCommentSection)
+                val dataSet: List<CommentModel> = listOf(
+                    CommentModel(
+                        "Swapan Bala",
+                        "9h ago",
+                        "Looks amazing and breathtaking. Been there, beautiful!",
+                        listOf(
+                            ReplyModel(
+                                "Whitechapel Gallery",
+                                "6h ago",
+                                "Swapan Bala",
+                                "Looks amazing and breathtaking. Been there, beautiful!",
+                                "Thank you @Swapan Bala"
+                            ),
+                            ReplyModel(
+                                "Md. Ashiqur Rahman Naeem",
+                                "6h ago",
+                                "Whitechapel Gallery",
+                                "Thank you @Swapan Bala",
+                                "No need to thak him. He is not good. @Whitechapel Gallery"
+                            )
+                        )
+                    )
+                )
+                commentRv.adapter = CommentRecyclerViewAdapter(dataSet)
                 return HomePageViewHolder(view)
+            }
+
+            else -> {
+                throw IllegalArgumentException("Unknown type of layout in home page recycler view")
             }
         }
     }
