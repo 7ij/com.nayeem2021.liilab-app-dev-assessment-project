@@ -14,7 +14,7 @@ enum class SectionType {
 }
 
 class HomePageRecyclerViewAdapter(
-    private val dataSet: List<String>,
+    private val dataSet: List<Any>,
     private val fragmentManager: FragmentManager
 ) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -79,31 +79,11 @@ class HomePageRecyclerViewAdapter(
                     R.layout.home_page_post,
                     parent, false
                 )
-                val commentRv = view.findViewById<RecyclerView>(R.id.rvCommentSection)
-                val dataSet: List<CommentModel> = listOf(
-                    CommentModel(
-                        "Swapan Bala",
-                        "9h ago",
-                        "Looks amazing and breathtaking. Been there, beautiful!",
-                        listOf(
-                            ReplyModel(
-                                "Whitechapel Gallery",
-                                "6h ago",
-                                "Swapan Bala",
-                                "Looks amazing and breathtaking. Been there, beautiful!",
-                                "Thank you @Swapan Bala"
-                            ),
-                            ReplyModel(
-                                "Md. Ashiqur Rahman Naeem",
-                                "6h ago",
-                                "Whitechapel Gallery",
-                                "Thank you @Swapan Bala",
-                                "No need to thak him. He is not good. @Whitechapel Gallery"
-                            )
-                        )
-                    )
-                )
-                commentRv.adapter = CommentRecyclerViewAdapter(dataSet)
+                val commentDataSet = dataSet[4] as List<CommentModel>
+                if(commentDataSet.isNotEmpty()) {
+                    val commentRv = view.findViewById<RecyclerView>(R.id.rvCommentSection)
+                    commentRv.adapter = CommentRecyclerViewAdapter(commentDataSet)
+                }
                 return HomePageViewHolder(view)
             }
 
@@ -121,7 +101,6 @@ class HomePageRecyclerViewAdapter(
 
     }
 
-    class HomePageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
+    class HomePageViewHolder(val itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 }

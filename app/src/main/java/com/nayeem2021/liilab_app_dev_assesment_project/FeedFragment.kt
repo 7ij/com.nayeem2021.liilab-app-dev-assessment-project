@@ -10,6 +10,50 @@ import com.nayeem2021.liilab_app_dev_assesment_project.databinding.FragmentFeedB
 class FeedFragment : Fragment() {
     private var _binding:FragmentFeedBinding ?= null
     private val binding get() = _binding!!
+    val commentDataSet: List<CommentModel> = listOf(
+        CommentModel(
+            "Swapan Bala",
+            "9h ago",
+            "Looks amazing and breathtaking. Been there, beautiful!",
+            listOf(
+                ReplyModel(
+                    "Whitechapel Gallery",
+                    "6h ago",
+                    "Swapan Bala",
+                    "Looks amazing and breathtaking. Been there, beautiful!",
+                    "Thank you @Swapan Bala"
+                ),
+                ReplyModel(
+                    "Md. Ashiqur Rahman Naeem",
+                    "6h ago",
+                    "Whitechapel Gallery",
+                    "Thank you @Swapan Bala",
+                    "No need to thak him. He is not good. @Whitechapel Gallery"
+                )
+            )
+        ),
+        CommentModel(
+            "Rahim Badsha",
+            "1h ago",
+            "Looks amazing and breathtaking. Been there, beautiful!",
+            listOf(
+                ReplyModel(
+                    "Whitechapel Gallery",
+                    "6h ago",
+                    "Swapan Bala",
+                    "Looks amazing and breathtaking. Been there, beautiful!",
+                    "Thank you @Swapan Bala"
+                ),
+                ReplyModel(
+                    "Md. Ashiqur Rahman Naeem",
+                    "6h ago",
+                    "Whitechapel Gallery",
+                    "Thank you @Swapan Bala",
+                    "No need to thak him. He is not good. @Whitechapel Gallery"
+                )
+            )
+        )
+    )
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,7 +67,7 @@ class FeedFragment : Fragment() {
         initViews()
     }
     private fun initViews() {
-        val dataSet = listOf("a", "b", "c", "d", "e")
+        val dataSet = listOf("a", "b", "c", "d", commentDataSet)
         binding.homePageRecyclerView.adapter = HomePageRecyclerViewAdapter(dataSet, parentFragmentManager)
     }
 }

@@ -3,6 +3,7 @@ package com.nayeem2021.liilab_app_dev_assesment_project
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class CommentRecyclerViewAdapter(val dataSet: List<CommentModel>) :
@@ -27,7 +28,17 @@ class CommentRecyclerViewAdapter(val dataSet: List<CommentModel>) :
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder as CommentViewHolder
+        holder.bind(dataSet[position])
     }
-    inner class CommentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class CommentViewHolder(val itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val userTv = itemView.findViewById<TextView>(R.id.comment_profile_name)
+        val whenTv = itemView.findViewById<TextView>(R.id.when_comment_was_posted)
+        val contentTv = itemView.findViewById<TextView>(R.id.comment_content)
+        fun bind(commentModel: CommentModel) {
+            userTv.text = commentModel.user
+            whenTv.text = commentModel.whenPosted
+            contentTv.text = commentModel.content
+        }
+    }
 }

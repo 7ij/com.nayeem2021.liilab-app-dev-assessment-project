@@ -18,4 +18,21 @@
         <item name="android:clipToOutline">true</item>
         <item name="android:scaleType">centerCrop</item>
     </style>
+    <style name="medium_avatar_style_34x34">
+        <item name="android:layout_width">34dp</item>
+        <item name="android:layout_height">34dp</item>
+        <item name="android:background">@drawable/avatar_oval_background</item>
+        <item name="android:clipToOutline">true</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="send_button_styles">
+        <item name="android:layout_width">44dp</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:backgroundTint">#12377DFF</item>
+        <item name="android:paddingLeft">9dp</item>
+        <item name="android:paddingTop">9dp</item>
+        <item name="android:paddingRight">9dp</item>
+        <item name="android:paddingBottom">9dp</item>
+    </style>
 </resources>

@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/user_who_is_replying"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Swapan Bala"
@@ -34,26 +34,26 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/when_reply_was_posted"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="9h ago"
-            app:layout_constraintEnd_toEndOf="@+id/textView15"
+            app:layout_constraintEnd_toEndOf="@+id/who_posted_reply"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textView15"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+            app:layout_constraintStart_toStartOf="@+id/who_posted_reply"
+            app:layout_constraintTop_toBottomOf="@+id/user_who_is_replying" />
 
         <ImageView
             android:id="@+id/imageView18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/textView16"
+            app:layout_constraintBottom_toBottomOf="@+id/when_reply_was_posted"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView15"
+            app:layout_constraintTop_toTopOf="@+id/user_who_is_replying"
             app:srcCompat="@drawable/three_dot_menu_horizontal" />
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/reply_content"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -73,10 +73,10 @@
             android:paddingVertical="6dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView16">
+            app:layout_constraintTop_toBottomOf="@+id/when_reply_was_posted">
 
             <TextView
-                android:id="@+id/textView20"
+                android:id="@+id/user_who_is_being_replied"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Replying to Swapan Bala"
@@ -84,15 +84,15 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView21"
+                android:id="@+id/comment_on_which_reply_was_given"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:text="Looks amazing and breathtaking. Been there, beautiful!"
-                app:layout_constraintEnd_toEndOf="@+id/textView20"
+                app:layout_constraintEnd_toEndOf="@+id/user_who_is_being_replied"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView20"
-                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+                app:layout_constraintStart_toStartOf="@+id/user_who_is_being_replied"
+                app:layout_constraintTop_toBottomOf="@+id/user_who_is_being_replied" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
