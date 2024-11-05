@@ -24,6 +24,6 @@ class FeedFragment : Fragment() {
     }
     private fun initViews() {
         val dataSet = listOf("a", "b", "c", "d")
-        binding.homePageRecyclerView.adapter = HomePageRecyclerViewAdapter(dataSet)
+        binding.homePageRecyclerView.adapter = HomePageRecyclerViewAdapter(dataSet, parentFragmentManager)
     }
 }
