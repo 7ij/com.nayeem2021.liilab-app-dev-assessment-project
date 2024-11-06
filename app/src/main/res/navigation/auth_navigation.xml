@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.nayeem2021.liilab_app_dev_assesment_project.pages.LoginFragment"
+        android:name="com.nayeem2021.liilab_app_dev_assesment_project.presentation.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -19,10 +19,10 @@
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.nayeem2021.liilab_app_dev_assesment_project.pages.RegistrationFragment"
+        android:name="com.nayeem2021.liilab_app_dev_assesment_project.presentation.registration.RegistrationFragment"
         android:label="RegistrationFragment" />
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.nayeem2021.liilab_app_dev_assesment_project.pages.ForgotPasswordFragment"
+        android:name="com.nayeem2021.liilab_app_dev_assesment_project.presentation.forget_password.ForgotPasswordFragment"
         android:label="ForgotPasswordFragment" />
 </navigation>

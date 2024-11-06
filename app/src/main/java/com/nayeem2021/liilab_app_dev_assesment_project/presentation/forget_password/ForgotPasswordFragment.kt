@@ -1,4 +1,4 @@
-package com.nayeem2021.liilab_app_dev_assesment_project.pages
+package com.nayeem2021.liilab_app_dev_assesment_project.presentation.forget_password
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

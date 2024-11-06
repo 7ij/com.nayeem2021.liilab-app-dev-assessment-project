@@ -53,7 +53,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/sign_in_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#0D4E5D78"
@@ -148,7 +148,7 @@
             app:layout_constraintTop_toBottomOf="@id/horizontal_or_divider" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
@@ -167,12 +167,12 @@
             android:ems="10"
             android:hint="Create Password"
             android:inputType="textPassword"
-            app:layout_constraintEnd_toEndOf="@+id/editTextText"
-            app:layout_constraintStart_toStartOf="@+id/editTextText"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+            app:layout_constraintEnd_toEndOf="@+id/etName"
+            app:layout_constraintStart_toStartOf="@+id/etName"
+            app:layout_constraintTop_toBottomOf="@+id/etName" />
 
         <EditText
-            android:id="@+id/editTextDate"
+            android:id="@+id/editTextDateOfBirth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
@@ -184,25 +184,25 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/sign_up_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:backgroundTint="#377DFF"
             android:text="Sign Up"
             app:cornerRadius="5.6dp"
-            app:layout_constraintEnd_toEndOf="@+id/editTextDate"
-            app:layout_constraintStart_toStartOf="@+id/editTextDate"
-            app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+            app:layout_constraintEnd_toEndOf="@+id/editTextDateOfBirth"
+            app:layout_constraintStart_toStartOf="@+id/editTextDateOfBirth"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDateOfBirth" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@id/button4"
-            app:layout_constraintStart_toStartOf="@id/button4"
-            app:layout_constraintTop_toBottomOf="@id/button4">
+            app:layout_constraintEnd_toEndOf="@id/sign_up_button"
+            app:layout_constraintStart_toStartOf="@id/sign_up_button"
+            app:layout_constraintTop_toBottomOf="@id/sign_up_button">
 
             <TextView
                 android:id="@+id/textView10"

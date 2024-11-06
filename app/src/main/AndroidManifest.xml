@@ -13,7 +13,7 @@
         android:theme="@style/Theme.LiilabAssesmentApp"
         tools:targetApi="31">
         <activity
-            android:name=".pages.AuthActivity"
+            android:name=".presentation.AuthMainActivity.AuthMainActivity"
             android:exported="true"
             android:theme="@style/Theme.LiilabAssesmentApp"
             android:windowSoftInputMode="adjustResize">
