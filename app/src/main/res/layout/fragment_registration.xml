@@ -53,7 +53,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/sign_in_btn"
+                android:id="@+id/go_back_to_sign_int_fragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#0D4E5D78"

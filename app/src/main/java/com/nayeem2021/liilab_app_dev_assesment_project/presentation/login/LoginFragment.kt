@@ -61,7 +61,7 @@ class LoginFragment : Fragment() {
         binding.textView14.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
         }
-        binding.signInBtn.setOnClickListener {
+        binding.signInButton.setOnClickListener {
             val userName = binding.editTextTextEmailAddress.text.toString()
             val password = binding.editTextTextPassword.text.toString()
             val loginData = LoginData(userName, password)
