@@ -1,18 +1,24 @@
 package com.nayeem2021.liilab_app_dev_assesment_project.data.repository
 
+import com.nayeem2021.liilab_app_dev_assesment_project.data.model.LoginResponse
 import com.nayeem2021.liilab_app_dev_assesment_project.data.source.local.UserLocalDataSource
 import com.nayeem2021.liilab_app_dev_assesment_project.domain.repository.AuthRepository
 import com.nayeem2021.liilab_app_dev_assesment_project.model.LoginData
 import com.nayeem2021.liilab_app_dev_assesment_project.model.ProfileData
+import javax.inject.Inject
 
-class AuthRepositoryImpl(private val localDataSource: UserLocalDataSource) : AuthRepository {
-    override fun login(loginData: LoginData): String {
+class AuthRepositoryImpl @Inject constructor(private val localDataSource: UserLocalDataSource) : AuthRepository {
+    override fun login(loginData: LoginData): LoginResponse {
         val loginResult = localDataSource.login(loginData)
-        return if (loginResult) "SUCCESS" else "INCORRECT USER NAME OR PASSWORD"
+        return loginResult
     }
 
     override fun register(profileData: ProfileData): String {
         val registerResult = localDataSource.register(profileData)
         return if(registerResult) "SUCCESS" else "SOMETHING WENT WRONG"
+    }
+
+    override fun checkLoginValidity(token: String): Boolean {
+        return localDataSource.isTokenValid(token)
     }
 }

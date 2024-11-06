@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainComponentActivity"
+            app:destination="@id/mainComponentActivity" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
@@ -25,4 +28,8 @@
         android:id="@+id/forgotPasswordFragment"
         android:name="com.nayeem2021.liilab_app_dev_assesment_project.presentation.forget_password.ForgotPasswordFragment"
         android:label="ForgotPasswordFragment" />
+    <activity
+        android:id="@+id/mainComponentActivity"
+        android:name="com.nayeem2021.liilab_app_dev_assesment_project.MainComponentActivity"
+        android:label="MainComponentActivity" />
 </navigation>

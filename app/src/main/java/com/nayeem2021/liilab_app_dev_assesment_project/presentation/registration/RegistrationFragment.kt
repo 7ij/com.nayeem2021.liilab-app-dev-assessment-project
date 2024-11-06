@@ -16,15 +16,14 @@ import com.nayeem2021.liilab_app_dev_assesment_project.databinding.FragmentRegis
 import com.nayeem2021.liilab_app_dev_assesment_project.domain.repository.AuthRepository
 import com.nayeem2021.liilab_app_dev_assesment_project.domain.usecase.RegistrationUseCase
 import com.nayeem2021.liilab_app_dev_assesment_project.model.ProfileData
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RegistrationFragment : Fragment() {
     private var _binding: FragmentRegistrationBinding? = null
     private val binding get() = _binding!!
-    
-    private  val localDataSource = UserLocalDataSource()
-    private val registrationRepository : AuthRepository =  AuthRepositoryImpl(localDataSource)
-    private val registrationUseCase =  RegistrationUseCase(registrationRepository)
-    private val registrationViewModel : RegistrationViewModel by viewModels {RegistrationViewModelFactory(registrationUseCase)}
+
+    private val registrationViewModel : RegistrationViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
