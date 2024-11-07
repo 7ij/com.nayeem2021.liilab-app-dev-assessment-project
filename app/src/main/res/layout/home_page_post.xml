@@ -39,7 +39,7 @@
             android:id="@+id/home_page_post_image_grid"
             layout="@layout/home_page_post_image_grid_section"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="335dp"
             android:layout_marginTop="10dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

@@ -3,41 +3,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="335dp">
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/post_flow_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:constraint_referenced_ids="imageView13,imageView11,imageView12"
+        app:flow_horizontalAlign="start"
+        app:flow_horizontalGap="8.73dp"
+
+        app:flow_maxElementsWrap="3"
+        app:flow_verticalGap="8.71dp"
+        app:flow_wrapMode="chain"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView13"
-        android:layout_width="164dp"
-        android:layout_height="89dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
-        app:layout_constraintEnd_toEndOf="@+id/imageView12"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView12"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12"
-        app:srcCompat="@drawable/home_page_post_sample_image_1"
+
+        app:srcCompat="@drawable/dummy_post_uploaded_photo_2"
         tools:showIn="@layout/home_page_post" />
 
     <ImageView
         android:id="@+id/imageView11"
-        android:layout_width="164dp"
-        android:layout_height="189dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:scaleType="centerCrop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/home_page_post_sample_image_1"
+        app:srcCompat="@drawable/dummy_post_uploaded_photo_2"
         tools:showIn="@layout/home_page_post" />
 
     <ImageView
         android:id="@+id/imageView12"
-        android:layout_width="164dp"
-        android:layout_height="89dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView11"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/home_page_post_sample_image_1"
+        app:srcCompat="@drawable/dummy_post_uploaded_photo_2"
         tools:showIn="@layout/home_page_post" />
 </androidx.constraintlayout.widget.ConstraintLayout>

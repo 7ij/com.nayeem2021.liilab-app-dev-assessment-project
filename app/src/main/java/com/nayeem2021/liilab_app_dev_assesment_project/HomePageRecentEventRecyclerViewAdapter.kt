@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class HomePageRecentEventRecyclerViewAdapter(private val dataSet: List<HomePageRecentEventDataModel>) :
+class HomePageRecentEventRecyclerViewAdapter(private val dataSet: List<SingleRecentEventModel>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(

@@ -1,17 +1,12 @@
 package com.nayeem2021.liilab_app_dev_assesment_project
 
-import android.content.Context
-import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.helper.widget.Flow
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlin.jvm.Throws
-
-enum class SectionType {
-    RECENT_EVENT_SECTION
-}
 
 class HomePageRecyclerViewAdapter(
     private val dataSet: List<Any>,
@@ -23,8 +18,9 @@ class HomePageRecyclerViewAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        when (viewType) {
-            0 -> {
+        Log.i("lolita", "view type: ${dataSet[viewType].javaClass.simpleName}")
+        when (dataSet[viewType]) {
+            is HomePageStoriesModel -> {
                 val view = LayoutInflater.from(parent.context).inflate(
                     R.layout.home_page_stories, parent, false
                 )
@@ -33,7 +29,7 @@ class HomePageRecyclerViewAdapter(
                 return HomePageViewHolder(view)
             }
 
-            1 -> {
+            is CreatePostModel -> {
                 val view = LayoutInflater.from(parent.context).inflate(
                     R.layout.home_page_create_post, parent, false
                 )
@@ -44,45 +40,73 @@ class HomePageRecyclerViewAdapter(
                 return HomePageViewHolder(view)
             }
 
-            2 -> {
+            is BirthdayModel -> {
                 val view = LayoutInflater.from(parent.context).inflate(
                     R.layout.home_page_birthday_section, parent, false
                 )
                 return HomePageViewHolder(view)
             }
 
-            3 -> {
+            is HomePageRecentEventModel -> {
                 val view = LayoutInflater.from(parent.context).inflate(
                     R.layout.home_page_recent_event_listing_section, parent, false
                 )
                 val rv = view.findViewById<RecyclerView>(R.id.recent_event_recycler_view)
-                val dataSet: List<HomePageRecentEventDataModel> = listOf(
-                    HomePageRecentEventDataModel(
-                        "Graduation Ceremony",
-                        "The graduation ceremony is also sometimes called. The graduation " +
-                                "ceremony is also sometimes called...",
-                        8
-                    ),
-                    HomePageRecentEventDataModel(
-                        "Photography Ideas",
-                        "Reflections. Reflections work because they can create...",
-                        11
-                    )
-                )
+                val model = dataSet[viewType] as HomePageRecentEventModel
+                val dataSet: List<SingleRecentEventModel> = model.events
                 rv.adapter = HomePageRecentEventRecyclerViewAdapter(dataSet)
                 rv.addItemDecoration(PaddingInBetweenRecyclerViewDecorator(14))
                 return HomePageViewHolder(view)
             }
 
-            4 -> {
+            is PostModel -> {
                 val view = LayoutInflater.from(parent.context).inflate(
                     R.layout.home_page_post,
                     parent, false
                 )
-                val commentDataSet = dataSet[4] as List<CommentModel>
-                if(commentDataSet.isNotEmpty()) {
+                val flow = view.findViewById<Flow>(R.id.post_flow_layout)
+
+                val postModel = dataSet[viewType] as PostModel
+
+                Log.i("lolita", "flow layout: $flow")
+                val numOfItem = flow.referencedIds.size
+                Log.i("lolita", "number of item: $numOfItem")
+
+                when (numOfItem) {
+                    1 -> {
+
+                    }
+
+                    2 -> {
+
+                    }
+
+                    3 -> {
+                        with(flow) {
+                            setMaxElementsWrap(2)
+                            setWrapMode(Flow.WRAP_CHAIN)
+                            setOrientation(Flow.HORIZONTAL)
+
+                        }
+                    }
+
+                    4 -> {
+
+                    }
+
+                    else -> {
+                        with(flow) {
+                            setMaxElementsWrap(2)
+                            setWrapMode(Flow.WRAP_CHAIN)
+                            setOrientation(Flow.HORIZONTAL)
+                        }
+                    }
+                }
+                // comment section
+                val comments = postModel.comments
+                if (comments.isNotEmpty()) {
                     val commentRv = view.findViewById<RecyclerView>(R.id.rvCommentSection)
-                    commentRv.adapter = CommentRecyclerViewAdapter(commentDataSet)
+                    commentRv.adapter = CommentRecyclerViewAdapter(comments)
                 }
                 return HomePageViewHolder(view)
             }
