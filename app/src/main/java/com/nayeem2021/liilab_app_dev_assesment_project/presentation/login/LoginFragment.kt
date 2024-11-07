@@ -56,15 +56,15 @@ class LoginFragment : Fragment() {
     }
 
     private fun initViews() {
-        binding.tvSignUp.setOnClickListener {
+        binding.btnSignUp.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
         }
         binding.textView14.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
         }
         binding.signInButton.setOnClickListener {
-            val userName = binding.editTextTextEmailAddress.text.toString()
-            val password = binding.editTextTextPassword.text.toString()
+            val userName = binding.editTextEmail.text.toString()
+            val password = binding.editTextPassword.text.toString()
             val loginData = LoginData(userName, password)
             loginViewModel.requestLogin(loginData)
         }
