@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="10dp">
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This fragment is a proof of concept that whenever a user tries to         do some action with current session token, if the response becomes unauthorized because due         to some reason the, the token is invalidated in server, we will force log out the user with         a toast message.         1. First click button 1. It will simulate the effect of token invalidation in server locally         inside app database. Usually this may trigger by tapping log out button in real app. Or somehow         token is invalidated in server.         2. Tap second button to perform an action, eg. like, comment or whatever. In this case,         we will just try to post a content after clicking         But since the token is already invalid I'll be forced to log out.         Also note, after clicking button 1 if we close app and restart, we will also be logged out "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/delete_token_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="1. delete token"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <Button
+        android:id="@+id/perform_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="2. check"
+        app:layout_constraintEnd_toEndOf="@+id/delete_token_button"
+        app:layout_constraintStart_toStartOf="@+id/delete_token_button"
+        app:layout_constraintTop_toBottomOf="@+id/delete_token_button" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.nayeem2021.liilab_app_dev_assesment_project.databinding.FragmentFeedBinding
 
 class FeedFragment : Fragment() {
@@ -27,6 +28,10 @@ class FeedFragment : Fragment() {
         initViews()
     }
 
+    fun navigateToCreatePostFragment() {
+        findNavController().navigate(R.id.action_feedFragment_to_createPostFragment)
+    }
+
     private fun initViews() {
         val dataSet = listOf(
             HomePageStoriesModel(),
@@ -37,6 +42,6 @@ class FeedFragment : Fragment() {
             BirthdayModel()
         )
         binding.homePageRecyclerView.adapter =
-            HomePageRecyclerViewAdapter(dataSet, parentFragmentManager)
+            HomePageRecyclerViewAdapter(dataSet, ::navigateToCreatePostFragment)
     }
 }

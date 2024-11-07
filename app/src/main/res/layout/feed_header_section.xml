@@ -11,13 +11,13 @@
         android:id="@+id/imageView10"
         android:layout_width="18dp"
         android:layout_height="18dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextText"
+        app:layout_constraintBottom_toBottomOf="@+id/etName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextText"
+        app:layout_constraintTop_toTopOf="@+id/etName"
         app:srcCompat="@drawable/message_icon" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/etName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"

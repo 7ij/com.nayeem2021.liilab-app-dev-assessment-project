@@ -8,12 +8,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.helper.widget.Flow
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 
 class HomePageRecyclerViewAdapter(
     private val dataSet: List<Any>,
-    private val fragmentManager: FragmentManager
+    private val navigateToCreatePostFragment : () -> Unit
 ) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemViewType(position: Int): Int {
@@ -37,8 +36,7 @@ class HomePageRecyclerViewAdapter(
                     R.layout.home_page_create_post, parent, false
                 )
                 view.findViewById<View>(R.id.whats_happening_button).setOnClickListener {
-                    fragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, CreatePostFragment()).commit()
+                    navigateToCreatePostFragment()
                 }
                 return CreatePostViewHolder(view)
             }

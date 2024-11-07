@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.nayeem2021.liilab_app_dev_assesment_project.presentation.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainComponentActivity"
+            app:destination="@id/mainComponentActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.nayeem2021.liilab_app_dev_assesment_project.presentation.registration.RegistrationFragment"
+        android:label="RegistrationFragment" />
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.nayeem2021.liilab_app_dev_assesment_project.presentation.forget_password.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment" />
+    <activity
+        android:id="@+id/mainComponentActivity"
+        android:name="com.nayeem2021.liilab_app_dev_assesment_project.MainComponentActivity"
+        android:label="MainComponentActivity" />
+</navigation>
