@@ -53,8 +53,7 @@
 
             <include
                 android:id="@+id/login_with_google"
-                layout="@layout/login_with_google"
-              />
+                layout="@layout/login_with_google" />
 
             <include
                 android:id="@+id/login_with_apple"
@@ -190,31 +189,30 @@
                 app:layout_constraintStart_toStartOf="@+id/inputLayoutDateOfBirth"
                 app:layout_constraintTop_toBottomOf="@+id/inputLayoutDateOfBirth" />
 
-            <LinearLayout
+            <androidx.constraintlayout.helper.widget.Flow
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal"
+                app:constraint_referenced_ids="textView10,tv_sign_in"
+                app:flow_wrapMode="chain"
                 app:layout_constraintEnd_toEndOf="@id/sign_up_button"
                 app:layout_constraintStart_toStartOf="@id/sign_up_button"
-                app:layout_constraintTop_toBottomOf="@id/sign_up_button">
+                app:layout_constraintTop_toBottomOf="@id/sign_up_button" />
 
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Already have an account? "
-                    android:textSize="12sp" />
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account? "
+                android:textSize="12sp" />
 
-                <TextView
-                    android:id="@+id/tv_sign_in"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
-                    android:text="Sign In"
-                    android:textColor="#377DFF"
-                    android:textSize="12sp" />
-            </LinearLayout>
+            <Button
+                android:id="@+id/tv_sign_in"
+                style="@style/LittleTextButton"
+                android:text="Sign In"
+                app:cornerRadius="2dp" />
+
 
             <androidx.constraintlayout.helper.widget.Flow
                 android:id="@id/flow"

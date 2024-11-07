@@ -118,18 +118,25 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword" />
 
-            <TextView
-                android:id="@+id/textView16"
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/sign_up_area_flow_wrapper"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="You haven't any account?  "
-                android:textColor="#4E5D78"
-                android:textFontWeight="500"
+                android:layout_marginTop="24dp"
                 app:layout_constraintEnd_toEndOf="@id/sign_in_button"
-                app:layout_constraintHorizontal_bias="0.38"
                 app:layout_constraintStart_toStartOf="@id/sign_in_button"
-                app:layout_constraintTop_toBottomOf="@id/sign_in_button" />
+                app:layout_constraintTop_toBottomOf="@id/sign_in_button"
+                android:orientation="horizontal"
+                app:constraint_referenced_ids="you_haven_t_any_account, btn_sign_up"
+                />
+
+            <TextView
+                android:id="@+id/you_haven_t_any_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You haven't any account?"
+                android:textColor="#4E5D78"
+                android:textFontWeight="500" />
 
             <androidx.constraintlayout.helper.widget.Flow
                 android:id="@+id/flow2"
@@ -195,16 +202,11 @@
                     android:background="?android:attr/listDivider" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_sign_up"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+            <Button
+                android:id="@+id/btn_sign_up"
+                style="@style/LittleTextButton"
                 android:text="Sign Up"
-                android:textColor="#4E5D78"
-                app:layout_constraintStart_toEndOf="@+id/textView16"
-
-                app:layout_constraintTop_toBottomOf="@id/sign_in_button" />
+                app:cornerRadius="2dp" />
 
             <include
                 android:id="@+id/button2"

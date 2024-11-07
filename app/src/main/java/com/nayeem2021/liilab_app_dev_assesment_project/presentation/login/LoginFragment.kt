@@ -56,7 +56,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun initViews() {
-        binding.tvSignUp.setOnClickListener {
+        binding.btnSignUp.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
         }
         binding.textView14.setOnClickListener {
