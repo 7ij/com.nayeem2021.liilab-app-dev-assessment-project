@@ -48,4 +48,10 @@
         <item name="android:paddingBottom">0dp</item>
         <item name="android:textSize">12sp</item>
     </style>
+
+    <style name="style_like_comment_share_button" parent="Widget.Material3.Button.TextButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textColor">#994E5D78</item>
+    </style>
 </resources>
