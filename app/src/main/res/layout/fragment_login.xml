@@ -136,7 +136,8 @@
                 android:layout_height="wrap_content"
                 android:text="You haven't any account?"
                 android:textColor="#4E5D78"
-                android:textFontWeight="500" />
+                android:textFontWeight="500"
+                android:textSize="12sp" />
 
             <androidx.constraintlayout.helper.widget.Flow
                 android:id="@+id/flow2"
@@ -206,7 +207,10 @@
                 android:id="@+id/btn_sign_up"
                 style="@style/LittleTextButton"
                 android:text="Sign Up"
-                app:cornerRadius="2dp" />
+                android:textSize="12sp"
+                app:cornerRadius="2dp"
+                tools:layout_editor_absoluteX="208dp"
+                tools:layout_editor_absoluteY="448dp" />
 
             <include
                 android:id="@+id/button2"
