@@ -1,11 +1,13 @@
 package com.nayeem2021.liilab_app_dev_assesment_project.domain.session
 
+import androidx.lifecycle.MutableLiveData
 import com.nayeem2021.liilab_app_dev_assesment_project.domain.repository.SessionRepository
 
 object SessionManagerImpl : SessionManager {
     private var _token : String ?= null
     private lateinit var sessionRepository : SessionRepository
     private var initialized = false
+    val liveData = MutableLiveData<AuthStatus>()
 
     fun init(sessionRepository: SessionRepository) {
         this.sessionRepository = sessionRepository
@@ -33,6 +35,7 @@ object SessionManagerImpl : SessionManager {
         checkInitialized()
         sessionRepository.deleteToken()
         _token = null
+        liveData.postValue(AuthStatus.LoggedOut)
     }
 
     private fun checkInitialized() {
@@ -41,4 +44,13 @@ object SessionManagerImpl : SessionManager {
         }
     }
 
+    fun setAuthStatusLoggedIn() {
+        liveData.postValue(AuthStatus.LoggedIn)
+    }
+
+}
+
+sealed class AuthStatus {
+    data object LoggedIn: AuthStatus()
+    data object LoggedOut: AuthStatus()
 }

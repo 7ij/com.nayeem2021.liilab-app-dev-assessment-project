@@ -5,10 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.nayeem2021.liilab_app_dev_assesment_project.databinding.FragmentFeedBinding
 
 class FeedFragment : Fragment() {
-    private var _binding:FragmentFeedBinding ?= null
+    private var _binding: FragmentFeedBinding? = null
     private val binding get() = _binding!!
     val commentDataSet: List<CommentModel> = listOf(
         CommentModel(
@@ -54,6 +55,7 @@ class FeedFragment : Fragment() {
             )
         )
     )
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -66,8 +68,15 @@ class FeedFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initViews()
     }
+
+    fun navigateToCreatePostFragment() {
+        findNavController().navigate(R.id.action_feedFragment_to_createPostFragment)
+    }
+
     private fun initViews() {
         val dataSet = listOf("a", "b", "c", "d", commentDataSet)
-        binding.homePageRecyclerView.adapter = HomePageRecyclerViewAdapter(dataSet, parentFragmentManager)
+        binding.homePageRecyclerView.adapter =
+            HomePageRecyclerViewAdapter(dataSet, ::navigateToCreatePostFragment)
+
     }
 }

@@ -1,5 +1,6 @@
 package com.nayeem2021.liilab_app_dev_assesment_project.data.repository
 
+import com.nayeem2021.liilab_app_dev_assesment_project.data.model.ActionResponse
 import com.nayeem2021.liilab_app_dev_assesment_project.data.model.LoginResponse
 import com.nayeem2021.liilab_app_dev_assesment_project.data.source.local.UserLocalDataSource
 import com.nayeem2021.liilab_app_dev_assesment_project.domain.repository.AuthRepository
@@ -20,5 +21,14 @@ class AuthRepositoryImpl @Inject constructor(private val localDataSource: UserLo
 
     override fun checkLoginValidity(token: String): Boolean {
         return localDataSource.isTokenValid(token)
+    }
+
+    override fun performFakeAction(token: String): ActionResponse<Any> {
+        val actionResult = localDataSource.performOperationWithToken(token)
+        return when(actionResult) {
+            "SUCCESS" -> return ActionResponse.Success<Any>("SUCCESS")
+            "INVALID_TOKEN" -> return ActionResponse.InvalidToken("Token Expired")
+            else -> return ActionResponse.Error("Something went wrong")
+        }
     }
 }

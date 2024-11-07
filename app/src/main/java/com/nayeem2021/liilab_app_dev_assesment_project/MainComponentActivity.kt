@@ -3,8 +3,14 @@ package com.nayeem2021.liilab_app_dev_assesment_project
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.nayeem2021.liilab_app_dev_assesment_project.databinding.ActivityMainComponenetBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainComponentActivity : AppCompatActivity() {
     private var _binding: ActivityMainComponenetBinding? = null
     private val binding get() = _binding!!
@@ -12,32 +18,10 @@ class MainComponentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainComponenetBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initViews()
-    }
-    private fun initViews() {
-        binding.bottomNavigationView.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.home_page -> {
-                    replaceFragment(FeedFragment())
-                }
+        val navHost = supportFragmentManager
+            .findFragmentById(binding.mainComponentNavHostFragment.id) as NavHostFragment
+        val navController = navHost.navController
+        binding.bottomNavigationView.setupWithNavController(navController)
 
-                R.id.my_community_page -> {
-                    replaceFragment(MyCommunityFragment())
-                }
-
-                else -> {
-                    true
-                }
-            }
-
-        }
-
-        binding.bottomNavigationView.selectedItemId = R.id.home_page
-    }
-
-    private fun replaceFragment(fragment: Fragment) : Boolean {
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment)
-            .commit()
-        return true
     }
 }

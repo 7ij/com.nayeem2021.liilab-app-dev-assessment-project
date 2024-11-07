@@ -1,13 +1,12 @@
 package com.nayeem2021.liilab_app_dev_assesment_project
 
-import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import kotlin.jvm.Throws
 
 enum class SectionType {
     RECENT_EVENT_SECTION
@@ -15,7 +14,7 @@ enum class SectionType {
 
 class HomePageRecyclerViewAdapter(
     private val dataSet: List<Any>,
-    private val fragmentManager: FragmentManager
+    private val navigateToCreatePostFragment : () -> Unit
 ) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemViewType(position: Int): Int {
@@ -38,8 +37,7 @@ class HomePageRecyclerViewAdapter(
                     R.layout.home_page_create_post, parent, false
                 )
                 view.findViewById<View>(R.id.whats_happening_button).setOnClickListener {
-                    fragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, CreatePostFragment()).commit()
+                    navigateToCreatePostFragment()
                 }
                 return HomePageViewHolder(view)
             }

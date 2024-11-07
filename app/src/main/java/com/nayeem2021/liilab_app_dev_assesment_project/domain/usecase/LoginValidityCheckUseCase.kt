@@ -9,6 +9,9 @@ class LoginValidityCheckUseCase @Inject constructor(private val authRepository: 
         val isValid = authRepository.checkLoginValidity(token)
         if(!isValid)
             SessionManagerImpl.clearToken()
+        else
+            SessionManagerImpl.setAuthStatusLoggedIn()
+
         return isValid
     }
 }

@@ -26,19 +26,17 @@
             <include layout="@layout/feed_header_section" />
 
         </androidx.appcompat.widget.Toolbar>
-
-        <FrameLayout
-            android:id="@+id/fragment_container"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/main_component_nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="?attr/actionBarSize"
+            app:defaultNavHost="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-        </FrameLayout>
-
-
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/main_component_navigation" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

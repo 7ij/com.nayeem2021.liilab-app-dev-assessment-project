@@ -12,11 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.nayeem2021.liilab_app_dev_assesment_project.MainComponentActivity
 import com.nayeem2021.liilab_app_dev_assesment_project.R
-import com.nayeem2021.liilab_app_dev_assesment_project.data.repository.AuthRepositoryImpl
-import com.nayeem2021.liilab_app_dev_assesment_project.data.source.local.UserLocalDataSource
 import com.nayeem2021.liilab_app_dev_assesment_project.databinding.FragmentLoginBinding
-import com.nayeem2021.liilab_app_dev_assesment_project.domain.repository.AuthRepository
-import com.nayeem2021.liilab_app_dev_assesment_project.domain.usecase.LoginUseCase
 import com.nayeem2021.liilab_app_dev_assesment_project.model.LoginData
 import dagger.hilt.android.AndroidEntryPoint
 

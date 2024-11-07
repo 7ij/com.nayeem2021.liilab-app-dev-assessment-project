@@ -21,7 +21,7 @@ class UserLocalDataSource @Inject constructor() {
         }
     }
 
-    fun logout(token: String): Boolean {
+    fun simulateTokenInvalidationInServer(token: String): Boolean {
         return tokens.remove(token)
     }
 
@@ -45,5 +45,11 @@ class UserLocalDataSource @Inject constructor() {
 
     private fun alreadyExist(profileData: ProfileData): Boolean {
         return userData.contains(profileData)
+    }
+
+    fun performOperationWithToken(token: String): String {
+        if (isTokenValid(token))
+            return "SUCCESS"
+        return "INVALID_TOKEN"
     }
 }
