@@ -1,7 +1,7 @@
 package com.nayeem2021.liilab_app_dev_assesment_project
 
 object DummyData {
-    fun getComments() : List<CommentModel> {
+    fun getComments(): List<CommentModel> {
         return listOf(
             CommentModel(
                 "Swapan Bala",
@@ -49,30 +49,38 @@ object DummyData {
     }
 
     fun getPosts(): List<PostModel> {
-        return  listOf(
+        return listOf(
             PostModel(
                 "Sepural Gallery",
                 "15h.",
                 R.drawable.dummy_post_user_photo_1,
-                "Public",
-                "If you think adventure is dangerous, try routine, it’s lethal Paulo Coelho! Good morning all friends.",
-                listOf(
+                postPrivacy = "Public",
+                postContent = "If you think adventure is dangerous, try routine, it’s lethal Paulo Coelho! Good morning all friends.",
+                postImages = listOf(
                     R.drawable.dummy_post_uploaded_photo_1,
                 ),
-                listOf<CommentModel>()
+                comments = listOf<CommentModel>(),
+                likesCount = 12,
+                commentsCount = 3,
+                sharesCount = 17
             ),
             PostModel(
-                "Prothinidi Thomas",
+                user = "Prothinidi Thomas",
                 "2d.",
-                R.drawable.dummy_post_user_photo_2,
-                "Public",
-                "If you think adventure is dangerous, try routine, it’s lethal Paulo Coelho! Good morning all friends.",
-                listOf(
+                userImageResourceId = R.drawable.dummy_post_user_photo_2,
+                postPrivacy = "Public",
+                postContent = "If you think adventure is dangerous, try routine, it’s lethal Paulo Coelho! Good morning all friends.",
+                postImages = listOf(
                     R.drawable.dummy_post_uploaded_photo_4,
                     R.drawable.dummy_post_uploaded_photo_2,
+                    R.drawable.dummy_post_uploaded_photo_3,
+                    R.drawable.dummy_post_uploaded_photo_3,
                     R.drawable.dummy_post_uploaded_photo_3
                 ),
-                getComments()
+                comments = getComments(),
+                likesCount = 11,
+                commentsCount = 4,
+                sharesCount = 5
             )
         )
     }

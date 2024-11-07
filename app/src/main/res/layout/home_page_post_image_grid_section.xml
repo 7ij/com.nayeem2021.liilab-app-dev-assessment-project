@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/image_grid_layout"
     android:layout_width="match_parent"
     android:layout_height="335dp">
 
@@ -28,22 +29,22 @@
         android:layout_height="0dp"
         android:scaleType="centerCrop"
 
-        app:srcCompat="@drawable/dummy_post_uploaded_photo_2"
-        tools:showIn="@layout/home_page_post" />
+        tools:showIn="@layout/home_page_post"
+        tools:srcCompat="@drawable/dummy_post_uploaded_photo_2" />
 
     <ImageView
         android:id="@+id/imageView11"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/dummy_post_uploaded_photo_2"
-        tools:showIn="@layout/home_page_post" />
+        tools:showIn="@layout/home_page_post"
+        tools:srcCompat="@drawable/dummy_post_uploaded_photo_2" />
 
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/dummy_post_uploaded_photo_2"
-        tools:showIn="@layout/home_page_post" />
+        tools:showIn="@layout/home_page_post"
+        tools:srcCompat="@drawable/dummy_post_uploaded_photo_2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
