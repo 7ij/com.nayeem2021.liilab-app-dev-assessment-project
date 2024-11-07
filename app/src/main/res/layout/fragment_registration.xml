@@ -18,6 +18,7 @@
             android:layout_marginTop="40dp"
             android:gravity="center"
             android:text="Getting Started"
+            android:textColor="#4E5D78"
             android:textFontWeight="500"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/textView9"
@@ -33,6 +34,7 @@
             android:layout_marginRight="47dp"
             android:gravity="center"
             android:text="Create an account to continue and connect with the people."
+            android:textColor="#4E5D78"
             android:textFontWeight="500"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +108,8 @@
                 app:layout_constraintEnd_toEndOf="@+id/horizontal_or_divider"
                 app:layout_constraintStart_toStartOf="@id/horizontal_or_divider"
                 app:layout_constraintTop_toBottomOf="@id/horizontal_or_divider"
-                app:startIconDrawable="@drawable/mail__">
+                app:startIconDrawable="@drawable/mail__"
+                app:startIconTint="#4E5D78">
 
                 <EditText
                     android:id="@+id/editTextEmail"
@@ -114,7 +117,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Your Email"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="#994E5D78" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -122,10 +126,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
+                app:hintTextColor="#994E5D78"
                 app:layout_constraintEnd_toEndOf="@+id/inputLayoutEmail"
                 app:layout_constraintStart_toStartOf="@+id/inputLayoutEmail"
                 app:layout_constraintTop_toBottomOf="@+id/inputLayoutEmail"
-                app:startIconDrawable="@drawable/smile">
+                app:startIconDrawable="@drawable/smile"
+                app:startIconTint="#4E5D78">
 
                 <EditText
                     android:id="@+id/editTextName"
@@ -133,7 +139,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Your Name"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:textColorHint="#994E5D78" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -147,7 +154,8 @@
                 app:layout_constraintEnd_toEndOf="@+id/inputLayoutName"
                 app:layout_constraintStart_toStartOf="@+id/inputLayoutName"
                 app:layout_constraintTop_toBottomOf="@+id/inputLayoutName"
-                app:startIconDrawable="@drawable/lock">
+                app:startIconDrawable="@drawable/lock"
+                app:startIconTint="#4E5D78">
 
                 <EditText
                     android:id="@+id/editTextPassword"
@@ -155,7 +163,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Create Password"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"
+                    android:textColorHint="#994E5D78" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -166,7 +175,8 @@
                 app:layout_constraintEnd_toEndOf="@+id/inputLayoutPassword"
                 app:layout_constraintStart_toStartOf="@+id/inputLayoutPassword"
                 app:layout_constraintTop_toBottomOf="@+id/inputLayoutPassword"
-                app:startIconDrawable="@drawable/calendar">
+                app:startIconDrawable="@drawable/calendar"
+                app:startIconTint="#4E5D78">
 
                 <EditText
                     android:id="@+id/editTextDateOfBirth"
@@ -174,7 +184,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Date of birth"
-                    android:inputType="date" />
+                    android:inputType="date"
+                    android:textColorHint="#994E5D78" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -184,6 +195,8 @@
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#377DFF"
                 android:text="Sign Up"
+                android:textFontWeight="500"
+                android:textSize="14sp"
                 app:cornerRadius="5.6dp"
                 app:layout_constraintEnd_toEndOf="@+id/inputLayoutDateOfBirth"
                 app:layout_constraintStart_toStartOf="@+id/inputLayoutDateOfBirth"
@@ -205,12 +218,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Already have an account? "
+                android:textColor="#4E5D78"
+                android:textFontWeight="500"
                 android:textSize="12sp" />
 
             <Button
                 android:id="@+id/tv_sign_in"
                 style="@style/LittleTextButton"
                 android:text="Sign In"
+                android:textFontWeight="500"
                 app:cornerRadius="2dp" />
 
 
