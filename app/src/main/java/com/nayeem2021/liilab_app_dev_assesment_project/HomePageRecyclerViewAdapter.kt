@@ -26,8 +26,6 @@ class HomePageRecyclerViewAdapter(
                 val view = LayoutInflater.from(parent.context).inflate(
                     R.layout.home_page_stories, parent, false
                 )
-                val rv = view.findViewById<RecyclerView>(R.id.home_page_stories_recycler_view)
-                rv.adapter = HomePageStoriesRecyclerViewAdapter()
                 return StoriesViewHolder(view)
             }
 
@@ -82,7 +80,8 @@ class HomePageRecyclerViewAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (dataSet[position]) {
             is HomePageStoriesModel -> {
-
+                holder as StoriesViewHolder
+                holder.bind(dataSet[position] as HomePageStoriesModel)
             }
 
             is CreatePostModel -> {
@@ -110,10 +109,21 @@ class HomePageRecyclerViewAdapter(
     class CreatePostViewHolder(val itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     }
-
     class StoriesViewHolder(val itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val rv = itemView.findViewById<RecyclerView>(R.id.home_page_stories_recycler_view)
+        init {
+            // we need to do this only once
+            // otherwise each time we'll scroll back to the top
+            // 18dp space will be added to each item
+            // I'm not sure yet if recyclerViewAdapter is also needed to be initialized only once
 
+            rv.addItemDecoration(PaddingInBetweenRecyclerViewDecorator(18, true))
+        }
+        fun bind(model: HomePageStoriesModel) {
+            rv.adapter = HomePageStoriesRvAdapter(model.stories)
+        }
     }
+
 
     class PostViewHolder(val itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvUserName = itemView.findViewById<TextView>(R.id.home_page_post_user_name)

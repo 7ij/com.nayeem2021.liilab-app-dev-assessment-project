@@ -6,7 +6,10 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
 
-class PaddingInBetweenRecyclerViewDecorator(private val paddingValue: Int) : RecyclerView.ItemDecoration() {
+class PaddingInBetweenRecyclerViewDecorator(
+    private val paddingValue: Int,
+    private val horizontally: Boolean = false
+) : RecyclerView.ItemDecoration() {
     override fun getItemOffsets(
         outRect: Rect,
         view: View,
@@ -15,8 +18,13 @@ class PaddingInBetweenRecyclerViewDecorator(private val paddingValue: Int) : Rec
     ) {
         super.getItemOffsets(outRect, view, parent, state)
         val curPosition = parent.getChildAdapterPosition(view)
-        if(curPosition != RecyclerView.NO_POSITION && curPosition != state.itemCount - 1)
-            outRect.bottom = dpToPx(paddingValue)
+        if (curPosition != RecyclerView.NO_POSITION && curPosition != state.itemCount - 1) {
+            if(!horizontally) {
+                outRect.bottom = dpToPx(paddingValue)
+            } else {
+                outRect.right = dpToPx(paddingValue)
+            }
+        }
     }
 }
 

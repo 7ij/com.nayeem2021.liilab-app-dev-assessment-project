@@ -34,7 +34,7 @@ class FeedFragment : Fragment() {
 
     private fun initViews() {
         val dataSet = listOf(
-            HomePageStoriesModel(),
+            HomePageStoriesModel(DummyData.getStories()),
             CreatePostModel(),
             userPostsDataSet[0],
             recentEventDataSet,
@@ -43,5 +43,6 @@ class FeedFragment : Fragment() {
         )
         binding.homePageRecyclerView.adapter =
             HomePageRecyclerViewAdapter(dataSet, ::navigateToCreatePostFragment)
+        binding.homePageRecyclerView.addItemDecoration(PaddingInBetweenRecyclerViewDecorator(8))
     }
 }

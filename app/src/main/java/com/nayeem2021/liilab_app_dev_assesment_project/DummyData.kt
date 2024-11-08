@@ -101,4 +101,16 @@ object DummyData {
         )
         return HomePageRecentEventModel(eventList)
     }
+
+    fun getStories(): List<Any> {
+        return listOf(
+            StoryModelSelf("Saleh", R.drawable.create_post_user_avatar),
+            StoryModel("Edilson", R.drawable.dummy_story_photo_1),
+            StoryModel("Afrim", R.drawable.dummy_story_photo_2),
+            StoryModel("Eduardo", R.drawable.dummy_story_photo_3),
+            StoryModel("Asif", R.drawable.dummy_story_photo_4),
+            StoryModel("Sarjis", R.drawable.dummy_story_photo_5),
+
+        )
+    }
 }
