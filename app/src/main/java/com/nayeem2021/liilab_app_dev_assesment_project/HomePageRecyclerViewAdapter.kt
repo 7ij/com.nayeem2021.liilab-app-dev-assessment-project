@@ -177,6 +177,7 @@ class HomePageRecyclerViewAdapter(
             if (comments.isNotEmpty()) {
                 val commentRv = itemView.findViewById<RecyclerView>(R.id.rvCommentSection)
                 commentRv.adapter = CommentRecyclerViewAdapter(comments)
+                commentRv.addItemDecoration(PaddingInBetweenRecyclerViewDecorator(14))
             }
         }
     }

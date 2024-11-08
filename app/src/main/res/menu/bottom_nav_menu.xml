@@ -14,7 +14,7 @@
         android:title="Explore" />
     <item
         android:id="@+id/notificationFragment"
-        android:icon="@drawable/community_icon"
+        android:icon="@drawable/notification_icon"
         android:title="Notification" />
     <item
         android:id="@+id/settingsFragment"

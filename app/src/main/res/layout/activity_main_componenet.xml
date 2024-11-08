@@ -33,19 +33,28 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="?attr/actionBarSize"
             app:defaultNavHost="true"
+            android:backgroundTint="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:navGraph="@navigation/main_component_navigation" />
+            app:navGraph="@navigation/main_component_navigation"
+
+            />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:foregroundTint="#FFFFFF"
+        app:backgroundTint="#FFFFFF"
+        app:itemIconTint="#4E5D78"
+
+        app:itemTextColor="#4E5D78"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
         app:menu="@menu/bottom_nav_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

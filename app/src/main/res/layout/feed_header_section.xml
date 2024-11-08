@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/message_icon" />
 
     <EditText
-        android:id="@+id/etName"
+        android:id="@+id/etSearch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"

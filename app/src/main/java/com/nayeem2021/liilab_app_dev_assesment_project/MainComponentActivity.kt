@@ -21,7 +21,8 @@ class MainComponentActivity : AppCompatActivity() {
         val navHost = supportFragmentManager
             .findFragmentById(binding.mainComponentNavHostFragment.id) as NavHostFragment
         val navController = navHost.navController
-        binding.bottomNavigationView.setupWithNavController(navController)
-
+        val navBar  = binding.bottomNavigationView
+        navBar.setupWithNavController(navController)
+        navBar.getOrCreateBadge(R.id.notificationFragment).number = 2
     }
 }
