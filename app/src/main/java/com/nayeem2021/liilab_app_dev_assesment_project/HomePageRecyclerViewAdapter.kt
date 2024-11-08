@@ -130,8 +130,8 @@ class HomePageRecyclerViewAdapter(
         val tvPostTime = itemView.findViewById<TextView>(R.id.home_page_post_time)
         val tvPostPrivacy = itemView.findViewById<TextView>(R.id.home_page_post_privacy)
         val tvPostConent = itemView.findViewById<TextView>(R.id.home_page_post_main_content)
-        val tvCommentCount = itemView.findViewById<TextView>(R.id.post_count)
-        val tvShareCount = itemView.findViewById<TextView>(R.id.share_count)
+        val btnCommentCount = itemView.findViewById<TextView>(R.id.comment_count_button)
+        val btnShareCount = itemView.findViewById<TextView>(R.id.share_count_button)
         val flow = itemView.findViewById<Flow>(R.id.post_flow_layout)
         val imageGridConstraintLayout = itemView.findViewById<ConstraintLayout>(R.id.home_page_post_image_grid)
 
@@ -140,8 +140,8 @@ class HomePageRecyclerViewAdapter(
             tvPostTime.text = model.postTime
             tvPostPrivacy.text = model.postPrivacy
             tvPostConent.text = model.postContent
-            tvCommentCount.text = model.commentsCount.toString()
-            tvShareCount.text = model.sharesCount.toString()
+            btnCommentCount.text = model.commentsCount.toString() + " Comments"
+            btnShareCount.text = model.sharesCount.toString() + " Shares"
 
             Log.i("lolita", "flow layout: $flow")
             val numOfItem = model.postImages.size

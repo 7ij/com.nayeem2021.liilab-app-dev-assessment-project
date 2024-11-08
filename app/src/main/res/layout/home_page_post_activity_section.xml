@@ -5,77 +5,94 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
-        android:background="@drawable/avatar_oval_background"
-        android:clipToOutline="true"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView16"
-        app:layout_constraintStart_toEndOf="@+id/imageView16"
-        app:layout_constraintTop_toTopOf="@+id/imageView16"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/create_post_user_avatar" />
-
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
-        android:background="@drawable/avatar_oval_background"
-        android:clipToOutline="true"
-        android:scaleType="centerCrop"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        android:minWidth="0dp"
+        android:minHeight="30dp"
+        android:padding="0dp"
+        android:paddingStart="-20dp"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView15"
-        app:layout_constraintTop_toTopOf="@+id/imageView15"
-        app:srcCompat="@drawable/create_post_user_avatar" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/imageView16"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
-        android:background="@drawable/avatar_oval_background"
-        android:clipToOutline="true"
-        android:scaleType="centerCrop"
-        app:layout_constraintStart_toStartOf="parent"
+        <ImageView
+            android:id="@+id/iv1"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/avatar_oval_background"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/create_post_user_avatar" />
+
+        <ImageView
+            android:id="@+id/iv2"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/avatar_oval_background"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/iv1"
+            app:layout_constraintEnd_toEndOf="@id/iv1"
+            app:layout_constraintStart_toEndOf="@+id/iv1"
+            app:layout_constraintTop_toTopOf="@+id/iv1"
+            app:srcCompat="@drawable/create_post_user_avatar" />
+
+        <ImageView
+            android:id="@+id/iv3"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/avatar_oval_background"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/iv2"
+            app:layout_constraintEnd_toEndOf="@id/iv2"
+            app:layout_constraintStart_toEndOf="@+id/iv2"
+            app:layout_constraintTop_toTopOf="@+id/iv2"
+            app:srcCompat="@drawable/create_post_user_avatar" />
+
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/activity_small_circle"
+            android:gravity="center"
+            android:text="+9"
+            android:textColor="#FFFFFF"
+            android:textFontWeight="400"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv3"
+            app:layout_constraintEnd_toEndOf="@id/iv3"
+            app:layout_constraintStart_toEndOf="@+id/iv3"
+            app:layout_constraintTop_toTopOf="@+id/iv3" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/comment_count_button"
+        android:text="3 Comments"
+        style="@style/style_like_comment_share_button"
+        app:layout_constraintTop_toTopOf="@id/share_count_button"
+        app:layout_constraintBottom_toBottomOf="@id/share_count_button"
+        app:layout_constraintEnd_toStartOf="@id/share_count_button"
+        />
+
+    <Button
+        android:id="@+id/share_count_button"
+        style="@style/style_like_comment_share_button"
+        android:text="9 Share"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/create_post_user_avatar" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_sign_in"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="Comments"
-        app:layout_constraintBottom_toBottomOf="@+id/share_count"
-        app:layout_constraintEnd_toStartOf="@+id/share_count"
-        app:layout_constraintTop_toTopOf="@+id/share_count" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Share"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/post_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
-        android:text="3"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_sign_in"
-        app:layout_constraintEnd_toStartOf="@+id/tv_sign_in"
-        app:layout_constraintTop_toTopOf="@+id/tv_sign_in" />
-
-    <TextView
-        android:id="@+id/share_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
-        android:text="5"
-        app:layout_constraintBottom_toBottomOf="@+id/textView12"
-        app:layout_constraintEnd_toStartOf="@+id/textView12"
-        app:layout_constraintTop_toTopOf="@+id/textView12" />
 </androidx.constraintlayout.widget.ConstraintLayout>
