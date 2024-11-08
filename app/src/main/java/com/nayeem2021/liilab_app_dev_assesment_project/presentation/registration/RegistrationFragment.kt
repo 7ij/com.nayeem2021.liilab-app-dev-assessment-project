@@ -16,9 +16,14 @@ import androidx.navigation.fragment.findNavController
 import com.nayeem2021.liilab_app_dev_assesment_project.R
 import com.nayeem2021.liilab_app_dev_assesment_project.databinding.FragmentRegistrationBinding
 import com.nayeem2021.liilab_app_dev_assesment_project.domain.model.RegistrationStatus
+import com.nayeem2021.liilab_app_dev_assesment_project.domain.usecase.EmailValidityCheckUseCase
+import com.nayeem2021.liilab_app_dev_assesment_project.domain.usecase.PasswordValidityCheckUseCase
 import com.nayeem2021.liilab_app_dev_assesment_project.model.ProfileData
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Locale
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class RegistrationFragment : Fragment() {
@@ -26,6 +31,12 @@ class RegistrationFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val registrationViewModel: RegistrationViewModel by viewModels()
+
+    @Inject
+    lateinit var isValidEmail: EmailValidityCheckUseCase
+
+    @Inject
+    lateinit var isValidPassword: PasswordValidityCheckUseCase
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -101,6 +112,76 @@ class RegistrationFragment : Fragment() {
             tvSignIn.setOnClickListener {
                 findNavController().navigateUp()
             }
+
+            editTextEmail.setOnFocusChangeListener { _, hasFocus ->
+                if (!hasFocus) {
+                    val email = binding.editTextEmail.text.toString()
+                    if (email.isEmpty()) {
+                        binding.inputLayoutEmail.error = "Email cannot be empty"
+                    } else {
+                        if (isValidEmail(email)) {
+                            binding.inputLayoutEmail.error = null
+                        } else {
+                            binding.inputLayoutEmail.error = "Invalid email address"
+                        }
+                    }
+                }
+            }
+
+            editTextPassword.setOnFocusChangeListener { _, hasFocus ->
+                if (!hasFocus) {
+                    val password = binding.editTextPassword.text.toString()
+                    if (password.isEmpty()) {
+                        binding.inputLayoutPassword.error = "Password cannot be empty"
+                    } else if (password.length < 8) {
+                        binding.inputLayoutPassword.error =
+                            "Password cannot be less than 8 character"
+                    } else if (!isValidPassword(password)) {
+                        binding.inputLayoutPassword.error = "Invalid password"
+                    } else {
+                        binding.inputLayoutPassword.error = null
+                    }
+                }
+            }
+
+            editTextName.setOnFocusChangeListener { _, hasFocus ->
+                if (!hasFocus) {
+                    val name = binding.editTextName.text.toString()
+                    if (name.isEmpty()) {
+                        binding.inputLayoutName.error = "Name cannot be empty"
+                    } else if (name.length < 3) {
+                        binding.inputLayoutName.error =
+                            "Name cannot be less than 3 character"
+                    } else {
+                        binding.inputLayoutName.error = null
+                    }
+                }
+            }
+            editTextDateOfBirth.setOnFocusChangeListener { _, hasFocus ->
+                if (!hasFocus) {
+                    val dateOfBirth = binding.editTextDateOfBirth.text.toString()
+                    if (dateOfBirth.isEmpty()) {
+                        binding.inputLayoutDateOfBirth.error = "Date of birth cannot be empty"
+                    } else if (!isValidDate(dateOfBirth)) {
+                        binding.inputLayoutDateOfBirth.error =
+                            "valid format: dd/MM/yyyy"
+                    } else {
+                        binding.inputLayoutDateOfBirth.error = null
+                    }
+                }
+            }
+        }
+
+    }
+
+    private fun isValidDate(date: String, format: String = "dd/MM/yyyy"): Boolean {
+        return try {
+            val dateFormat = SimpleDateFormat(format, Locale.getDefault())
+            dateFormat.isLenient = false
+            dateFormat.parse(date) != null
+        } catch (e: Exception) {
+            false
         }
     }
+
 }
