@@ -6,7 +6,7 @@ import com.nayeem2021.liilab_app_dev_assesment_project.model.ProfileData
 import java.util.UUID
 import javax.inject.Inject
 
-private val data = mutableListOf<LoginData>(LoginData("143arza@gmail.com", "Myn@meikhan01"))
+private val data = mutableListOf<LoginData>(LoginData("test123@gmail.com", "Xyn@iemkabcd01"))
 private val userData = mutableListOf<ProfileData>()
 private val tokens = mutableListOf<String>()
 
