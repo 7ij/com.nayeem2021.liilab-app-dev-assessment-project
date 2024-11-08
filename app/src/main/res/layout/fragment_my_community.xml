@@ -4,7 +4,7 @@
     android:id="@+id/fragment_my_community"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyCommunityFragment">
+    tools:context=".presentation.MyCommunityFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

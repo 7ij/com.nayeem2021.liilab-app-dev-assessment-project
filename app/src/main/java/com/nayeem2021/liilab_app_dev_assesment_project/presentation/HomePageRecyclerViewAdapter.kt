@@ -1,4 +1,4 @@
-package com.nayeem2021.liilab_app_dev_assesment_project
+package com.nayeem2021.liilab_app_dev_assesment_project.presentation
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,6 +9,14 @@ import android.widget.TextView
 import androidx.constraintlayout.helper.widget.Flow
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.HomePageRecentEventModel
+import com.nayeem2021.liilab_app_dev_assesment_project.domain.PaddingInBetweenRecyclerViewDecorator
+import com.nayeem2021.liilab_app_dev_assesment_project.R
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.SingleRecentEventModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.BirthdayModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.CreatePostModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.HomePageStoriesModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.PostModel
 
 class HomePageRecyclerViewAdapter(
     private val dataSet: List<Any>,

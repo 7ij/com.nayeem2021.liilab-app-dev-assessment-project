@@ -1,4 +1,13 @@
-package com.nayeem2021.liilab_app_dev_assesment_project
+package com.nayeem2021.liilab_app_dev_assesment_project.data.source
+
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.HomePageRecentEventModel
+import com.nayeem2021.liilab_app_dev_assesment_project.R
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.SingleRecentEventModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.StoryModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.StoryModelSelf
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.CommentModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.PostModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.ReplyModel
 
 object DummyData {
     fun getComments(): List<CommentModel> {

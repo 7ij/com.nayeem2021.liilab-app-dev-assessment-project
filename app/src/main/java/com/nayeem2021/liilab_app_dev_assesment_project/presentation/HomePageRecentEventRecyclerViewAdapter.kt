@@ -1,10 +1,12 @@
-package com.nayeem2021.liilab_app_dev_assesment_project
+package com.nayeem2021.liilab_app_dev_assesment_project.presentation
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.nayeem2021.liilab_app_dev_assesment_project.R
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.SingleRecentEventModel
 
 class HomePageRecentEventRecyclerViewAdapter(private val dataSet: List<SingleRecentEventModel>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {

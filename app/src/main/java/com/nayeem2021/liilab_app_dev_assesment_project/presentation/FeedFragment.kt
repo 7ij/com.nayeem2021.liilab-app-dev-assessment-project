@@ -1,4 +1,4 @@
-package com.nayeem2021.liilab_app_dev_assesment_project
+package com.nayeem2021.liilab_app_dev_assesment_project.presentation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.nayeem2021.liilab_app_dev_assesment_project.data.source.DummyData
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.HomePageRecentEventModel
+import com.nayeem2021.liilab_app_dev_assesment_project.domain.PaddingInBetweenRecyclerViewDecorator
+import com.nayeem2021.liilab_app_dev_assesment_project.R
 import com.nayeem2021.liilab_app_dev_assesment_project.databinding.FragmentFeedBinding
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.BirthdayModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.CreatePostModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.HomePageStoriesModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.PostModel
 
 class FeedFragment : Fragment() {
     private var _binding: FragmentFeedBinding? = null
