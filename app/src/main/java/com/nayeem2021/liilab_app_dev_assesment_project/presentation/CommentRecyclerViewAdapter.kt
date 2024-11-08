@@ -1,11 +1,15 @@
-package com.nayeem2021.liilab_app_dev_assesment_project
+package com.nayeem2021.liilab_app_dev_assesment_project.presentation
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ItemDecoration
+import com.nayeem2021.liilab_app_dev_assesment_project.domain.PaddingInBetweenRecyclerViewDecorator
+import com.nayeem2021.liilab_app_dev_assesment_project.R
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.CommentModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.ReplyAdapter
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.ReplyModel
 
 class CommentRecyclerViewAdapter(val dataSet: List<CommentModel>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {

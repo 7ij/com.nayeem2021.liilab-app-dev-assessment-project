@@ -14,7 +14,7 @@ class RegistrationDataValidationUseCase {
         val nameOk = profileData.name.length >= 3
         val dateOfBirthOk = true // for now let's assume all dob is ok
         Log.i(
-            "lolita", "emailOk: $emailOk, passwordOk: $passwordOk," +
+            "debugTag", "emailOk: $emailOk, passwordOk: $passwordOk," +
                     "nameOk: $nameOk, dateOfBirthOk: $dateOfBirthOk"
         )
         val overallOk = emailOk && passwordOk && nameOk && dateOfBirthOk

@@ -1,4 +1,4 @@
-package com.nayeem2021.liilab_app_dev_assesment_project
+package com.nayeem2021.liilab_app_dev_assesment_project.presentation
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,6 +9,14 @@ import android.widget.TextView
 import androidx.constraintlayout.helper.widget.Flow
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.HomePageRecentEventModel
+import com.nayeem2021.liilab_app_dev_assesment_project.domain.PaddingInBetweenRecyclerViewDecorator
+import com.nayeem2021.liilab_app_dev_assesment_project.R
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.SingleRecentEventModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.BirthdayModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.CreatePostModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.HomePageStoriesModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.PostModel
 
 class HomePageRecyclerViewAdapter(
     private val dataSet: List<Any>,
@@ -20,7 +28,7 @@ class HomePageRecyclerViewAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        Log.i("lolita", "view type: ${dataSet[viewType].javaClass.simpleName}")
+        Log.i("debugTag", "view type: ${dataSet[viewType].javaClass.simpleName}")
         when (dataSet[viewType]) {
             is HomePageStoriesModel -> {
                 val view = LayoutInflater.from(parent.context).inflate(
@@ -143,9 +151,9 @@ class HomePageRecyclerViewAdapter(
             btnCommentCount.text = model.commentsCount.toString() + " Comments"
             btnShareCount.text = model.sharesCount.toString() + " Shares"
 
-            Log.i("lolita", "flow layout: $flow")
+            Log.i("debugTag", "flow layout: $flow")
             val numOfItem = model.postImages.size
-            Log.i("lolita", "number of item: $numOfItem")
+            Log.i("debugTag", "number of item: $numOfItem")
 
             flow.referencedIds = model.postImages.map {
                 val imageView = ImageView(itemView.context).apply {
@@ -157,8 +165,8 @@ class HomePageRecyclerViewAdapter(
                     )
                     scaleType = ImageView.ScaleType.CENTER_CROP
                 }
-                Log.i("lolita", "image view id: ${imageView.id}")
-                Log.i("lolita", "image parent: ${imageGridConstraintLayout}")
+                Log.i("debugTag", "image view id: ${imageView.id}")
+                Log.i("debugTag", "image parent: ${imageGridConstraintLayout}")
                 imageGridConstraintLayout.addView(imageView)
                 imageView.id
             }.toIntArray()

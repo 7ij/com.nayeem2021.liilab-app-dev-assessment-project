@@ -20,7 +20,7 @@
             android:windowSoftInputMode="adjustResize">
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainComponentActivity"
+            android:name=".presentation.MainComponentActivity"
             android:exported="false">
         </activity>
     </application>

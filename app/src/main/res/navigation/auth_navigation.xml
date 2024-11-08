@@ -30,6 +30,6 @@
         android:label="ForgotPasswordFragment" />
     <activity
         android:id="@+id/mainComponentActivity"
-        android:name="com.nayeem2021.liilab_app_dev_assesment_project.MainComponentActivity"
+        android:name="com.nayeem2021.liilab_app_dev_assesment_project.presentation.MainComponentActivity"
         android:label="MainComponentActivity" />
 </navigation>

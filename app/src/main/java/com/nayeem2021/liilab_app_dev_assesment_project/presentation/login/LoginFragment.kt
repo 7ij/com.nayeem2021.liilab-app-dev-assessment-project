@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import com.nayeem2021.liilab_app_dev_assesment_project.MainComponentActivity
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.MainComponentActivity
 import com.nayeem2021.liilab_app_dev_assesment_project.R
 import com.nayeem2021.liilab_app_dev_assesment_project.databinding.FragmentLoginBinding
 import com.nayeem2021.liilab_app_dev_assesment_project.domain.usecase.EmailValidityCheckUseCase

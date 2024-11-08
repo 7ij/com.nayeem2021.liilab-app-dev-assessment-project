@@ -1,4 +1,4 @@
-package com.nayeem2021.liilab_app_dev_assesment_project
+package com.nayeem2021.liilab_app_dev_assesment_project.domain
 
 import android.content.res.Resources
 import android.graphics.Rect

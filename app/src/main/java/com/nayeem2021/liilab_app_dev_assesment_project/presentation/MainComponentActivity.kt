@@ -1,12 +1,10 @@
-package com.nayeem2021.liilab_app_dev_assesment_project
+package com.nayeem2021.liilab_app_dev_assesment_project.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.nayeem2021.liilab_app_dev_assesment_project.R
 import com.nayeem2021.liilab_app_dev_assesment_project.databinding.ActivityMainComponenetBinding
 import dagger.hilt.android.AndroidEntryPoint
 

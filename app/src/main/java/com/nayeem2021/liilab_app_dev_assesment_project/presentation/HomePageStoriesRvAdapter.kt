@@ -1,4 +1,4 @@
-package com.nayeem2021.liilab_app_dev_assesment_project
+package com.nayeem2021.liilab_app_dev_assesment_project.presentation
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.nayeem2021.liilab_app_dev_assesment_project.R
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.StoryModel
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.model.StoryModelSelf
 
 class HomePageStoriesRvAdapter(val dataSet: List<Any>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemViewType(position: Int): Int {

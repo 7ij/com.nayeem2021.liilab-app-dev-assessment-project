@@ -1,4 +1,4 @@
-package com.nayeem2021.liilab_app_dev_assesment_project
+package com.nayeem2021.liilab_app_dev_assesment_project.presentation
 
 import androidx.lifecycle.ViewModel
 import com.nayeem2021.liilab_app_dev_assesment_project.data.repository.SessionRepositoryImplementationInRam
