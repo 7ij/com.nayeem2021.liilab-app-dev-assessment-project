@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/story_user_photo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/story_item_background"
+        android:clipToOutline="true"
+        android:foreground="@drawable/story_item_background"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/create_post_user_avatar" />
+
+    <TextView
+        android:id="@+id/story_user"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_horizontal|top"
+        android:text="John Smith"
+        android:textColor="#4E5D78"
+        android:textFontWeight="700"
+        app:layout_constraintEnd_toEndOf="@+id/story_user_photo"
+        app:layout_constraintStart_toStartOf="@+id/story_user_photo"
+        app:layout_constraintTop_toBottomOf="@+id/story_user_photo" />
+</androidx.constraintlayout.widget.ConstraintLayout>
