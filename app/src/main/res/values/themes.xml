@@ -5,7 +5,6 @@
          <item name="colorPrimary">@color/my_light_primary</item>
         <item name="android:textColorPrimary">@color/my_light_on_prime</item>
          <item name="colorSecondary">@color/my_light_secondary</item>
-         <item name="colorSurface">@color/my_light_surface</item>
          <item name="colorOnSurface">@color/my_light_on_surface</item>
         <item name="colorError">@color/my_light_error</item>
         <item name="colorOnBackground">="@color/my_light_on_surface"</item>
@@ -17,7 +16,6 @@
 
     <color name="my_light_primary">#377DFF</color>
     <color name="my_light_secondary">#38CB89</color>
-    <color name="my_light_surface">#FFFFFF</color>
     <color name="my_light_on_surface">#4E5D78</color>
     <color name="my_light_error">#FF5630</color>
     <color name="my_light_on_prime">#4E5D78</color>

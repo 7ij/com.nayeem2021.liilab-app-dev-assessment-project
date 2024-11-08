@@ -13,8 +13,11 @@ import androidx.navigation.fragment.findNavController
 import com.nayeem2021.liilab_app_dev_assesment_project.MainComponentActivity
 import com.nayeem2021.liilab_app_dev_assesment_project.R
 import com.nayeem2021.liilab_app_dev_assesment_project.databinding.FragmentLoginBinding
+import com.nayeem2021.liilab_app_dev_assesment_project.domain.usecase.EmailValidityCheckUseCase
+import com.nayeem2021.liilab_app_dev_assesment_project.domain.usecase.PasswordValidityCheckUseCase
 import com.nayeem2021.liilab_app_dev_assesment_project.model.LoginData
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
@@ -22,6 +25,8 @@ class LoginFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val loginViewModel: LoginViewModel by viewModels()
+    @Inject lateinit var isValidEmail: EmailValidityCheckUseCase
+    @Inject lateinit var isValidPassword: PasswordValidityCheckUseCase
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -68,5 +73,35 @@ class LoginFragment : Fragment() {
             val loginData = LoginData(userName, password)
             loginViewModel.requestLogin(loginData)
         }
+
+        binding.editTextEmail.setOnFocusChangeListener { _, hasFocus ->
+            if(!hasFocus) {
+                val email = binding.editTextEmail.text.toString()
+                if(email.isEmpty()) {
+                    binding.textInputLayoutEmail.error = "Email cannot be empty"
+                } else {
+                    if(isValidEmail(email)) {
+                        binding.textInputLayoutEmail.error = null
+                    } else {
+                        binding.textInputLayoutEmail.error = "Invalid email address"
+                    }
+                }
+            }
+        }
+        binding.editTextPassword.setOnFocusChangeListener { _, hasFocus ->
+            if(!hasFocus) {
+                val password = binding.editTextPassword.text.toString()
+                if(password.isEmpty()) {
+                    binding.textInputLayoutPassword.error = "Password cannot be empty"
+                } else if(password.length < 8) {
+                    binding.textInputLayoutPassword.error = "Password cannot be less than 8 character"
+                } else if(!isValidPassword(password)) {
+                    binding.textInputLayoutPassword.error = "Invalid password"
+                } else {
+                    binding.textInputLayoutPassword.error = null
+                }
+            }
+        }
+
     }
 }
