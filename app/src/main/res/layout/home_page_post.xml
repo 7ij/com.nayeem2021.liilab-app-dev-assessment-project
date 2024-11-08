@@ -6,101 +6,106 @@
     android:layout_height="wrap_content"
     android:paddingHorizontal="0dp"
     android:paddingVertical="10dp">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/home_page_post_upper_section"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/square_background_white"
-        android:paddingHorizontal="20dp"
-        android:paddingBottom="14dp"
+        style="@style/feed_card_style"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="2dp">
 
-        <include
-            android:id="@+id/home_page_post_top_heading_section"
-            layout="@layout/home_page_post_heading_section"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/home_page_post_main_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/home_page_post_main_content_place_holder_text"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_page_post_top_heading_section" />
-
-        <include
-            android:id="@+id/home_page_post_image_grid"
-            layout="@layout/home_page_post_image_grid_section"
-            android:layout_width="match_parent"
-            android:layout_height="335dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_page_post_main_content" />
-
-        <include
-            android:id="@+id/home_page_post_activity"
-            layout="@layout/home_page_post_activity_section"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_page_post_image_grid" />
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="14dp">
 
-        <View
-            android:id="@+id/home_page_like_comment_share_top_horizontal_divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="12dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_page_post_activity" />
+            <include
+                android:id="@+id/home_page_post_top_heading_section"
+                layout="@layout/home_page_post_heading_section"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <include
-            android:id="@+id/like_comment_share_area"
-            layout="@layout/home_page_post_like_comment_share_section"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_page_like_comment_share_top_horizontal_divider" />
+            <TextView
+                android:id="@+id/home_page_post_main_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/home_page_post_main_content_place_holder_text"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_page_post_top_heading_section" />
 
-        <View
-            android:id="@+id/home_page_like_comment_share_bottom_horizontal_divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
+            <include
+                android:id="@+id/home_page_post_image_grid"
+                layout="@layout/home_page_post_image_grid_section"
+                android:layout_width="match_parent"
+                android:layout_height="335dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_page_post_main_content" />
 
-            android:layout_marginTop="50dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/home_page_like_comment_share_top_horizontal_divider" />
+            <include
+                android:id="@+id/home_page_post_activity"
+                layout="@layout/home_page_post_activity_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_page_post_image_grid" />
 
-        <include
-            layout="@layout/inside_post_write_comment_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_page_like_comment_share_bottom_horizontal_divider" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                android:id="@+id/home_page_like_comment_share_top_horizontal_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_page_post_activity" />
+
+            <include
+                android:id="@+id/like_comment_share_area"
+                layout="@layout/home_page_post_like_comment_share_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_page_like_comment_share_top_horizontal_divider" />
+
+            <View
+                android:id="@+id/home_page_like_comment_share_bottom_horizontal_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+
+                android:layout_marginTop="50dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_page_like_comment_share_top_horizontal_divider" />
+
+            <include
+                layout="@layout/inside_post_write_comment_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_page_like_comment_share_bottom_horizontal_divider" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCommentSection"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="6dp"
-        android:paddingHorizontal="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="18dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
