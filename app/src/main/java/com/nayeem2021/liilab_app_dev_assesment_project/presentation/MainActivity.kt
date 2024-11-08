@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initObserver() {
         val observer = Observer<AuthStatus> {
-            Log.i("lolita", "MainActivity::initObserver: $it")
+            Log.i("debugTag", "MainActivity::initObserver: $it")
             when (it) {
                 AuthStatus.LoggedIn -> {
                     val intent = Intent(this, MainComponentActivity::class.java)

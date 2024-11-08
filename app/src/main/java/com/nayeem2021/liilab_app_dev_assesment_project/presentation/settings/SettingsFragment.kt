@@ -1,5 +1,6 @@
 package com.nayeem2021.liilab_app_dev_assesment_project.presentation.settings
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,11 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.nayeem2021.liilab_app_dev_assesment_project.data.model.ActionResponse
 import com.nayeem2021.liilab_app_dev_assesment_project.data.source.local.UserLocalDataSource
 import com.nayeem2021.liilab_app_dev_assesment_project.databinding.FragmentSettingsBinding
 import com.nayeem2021.liilab_app_dev_assesment_project.domain.repository.AuthRepository
 import com.nayeem2021.liilab_app_dev_assesment_project.domain.session.SessionManagerImpl
 import com.nayeem2021.liilab_app_dev_assesment_project.domain.usecase.FakeActionUseCase
+import com.nayeem2021.liilab_app_dev_assesment_project.presentation.AuthMainActivity.AuthMainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -55,7 +58,7 @@ class SettingsFragment : Fragment() {
 
         binding.performActionButton.setOnClickListener {
             val token = SessionManagerImpl.getToken()
-            Log.i("lolita", "liveData: ${SessionManagerImpl.liveData.value}")
+            Log.i("debugTag", "liveData: ${SessionManagerImpl.liveData.value}")
             if (token == null) {
                 Toast.makeText(
                     requireContext(),
@@ -63,7 +66,22 @@ class SettingsFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
-                fakeAction(token!!)
+                val result = fakeAction(token!!)
+                Log.i("debugTag", "result: $result")
+                when(result) {
+                    is ActionResponse.Error -> {
+                        Toast.makeText(requireContext(), "${result.error}", Toast.LENGTH_SHORT).show()
+                    }
+                    is ActionResponse.InvalidToken -> {
+                        Toast.makeText(requireContext(), "Invalid token. Login again", Toast.LENGTH_SHORT).show()
+                        requireActivity().finish()
+                        val intent = Intent(requireContext(), AuthMainActivity::class.java)
+                        startActivity(intent)
+                    }
+                    is ActionResponse.Success -> {
+                        Toast.makeText(requireContext(), "Action performed successfully", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
         }
     }

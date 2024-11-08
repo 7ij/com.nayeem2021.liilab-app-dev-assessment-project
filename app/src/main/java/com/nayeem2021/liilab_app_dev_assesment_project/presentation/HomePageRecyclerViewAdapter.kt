@@ -28,7 +28,7 @@ class HomePageRecyclerViewAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        Log.i("lolita", "view type: ${dataSet[viewType].javaClass.simpleName}")
+        Log.i("debugTag", "view type: ${dataSet[viewType].javaClass.simpleName}")
         when (dataSet[viewType]) {
             is HomePageStoriesModel -> {
                 val view = LayoutInflater.from(parent.context).inflate(
@@ -151,9 +151,9 @@ class HomePageRecyclerViewAdapter(
             btnCommentCount.text = model.commentsCount.toString() + " Comments"
             btnShareCount.text = model.sharesCount.toString() + " Shares"
 
-            Log.i("lolita", "flow layout: $flow")
+            Log.i("debugTag", "flow layout: $flow")
             val numOfItem = model.postImages.size
-            Log.i("lolita", "number of item: $numOfItem")
+            Log.i("debugTag", "number of item: $numOfItem")
 
             flow.referencedIds = model.postImages.map {
                 val imageView = ImageView(itemView.context).apply {
@@ -165,8 +165,8 @@ class HomePageRecyclerViewAdapter(
                     )
                     scaleType = ImageView.ScaleType.CENTER_CROP
                 }
-                Log.i("lolita", "image view id: ${imageView.id}")
-                Log.i("lolita", "image parent: ${imageGridConstraintLayout}")
+                Log.i("debugTag", "image view id: ${imageView.id}")
+                Log.i("debugTag", "image parent: ${imageGridConstraintLayout}")
                 imageGridConstraintLayout.addView(imageView)
                 imageView.id
             }.toIntArray()

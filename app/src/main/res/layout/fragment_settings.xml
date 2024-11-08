@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="1. delete token"
+        android:text="1. Simulate token invalidation in server"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="2. check"
+        android:text="2. Simulate Authenticated User Action"
         app:layout_constraintEnd_toEndOf="@+id/delete_token_button"
         app:layout_constraintStart_toStartOf="@+id/delete_token_button"
         app:layout_constraintTop_toBottomOf="@+id/delete_token_button" />

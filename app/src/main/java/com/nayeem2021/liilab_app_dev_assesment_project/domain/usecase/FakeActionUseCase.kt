@@ -9,7 +9,7 @@ import javax.inject.Inject
 class FakeActionUseCase @Inject constructor(private val authRepository: AuthRepository) {
     operator fun invoke(token: String) : ActionResponse<Any> {
         val actionResult = authRepository.performFakeAction(token)
-        Log.i("lolita", "actionResult: $actionResult")
+        Log.i("debugTag", "actionResult: $actionResult")
         if (actionResult is ActionResponse.InvalidToken) {
             SessionManagerImpl.clearToken()
         }

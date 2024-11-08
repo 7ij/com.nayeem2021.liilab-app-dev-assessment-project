@@ -118,7 +118,7 @@ object DummyData {
             StoryModel("Afrim", R.drawable.dummy_story_photo_2),
             StoryModel("Eduardo", R.drawable.dummy_story_photo_3),
             StoryModel("Asif", R.drawable.dummy_story_photo_4),
-            StoryModel("Sarjis", R.drawable.dummy_story_photo_5),
+            StoryModel("Tony", R.drawable.dummy_story_photo_5),
 
         )
     }
