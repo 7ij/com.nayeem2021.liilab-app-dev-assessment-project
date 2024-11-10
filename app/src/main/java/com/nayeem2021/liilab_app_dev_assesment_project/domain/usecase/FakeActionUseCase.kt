@@ -7,7 +7,7 @@ import com.nayeem2021.liilab_app_dev_assesment_project.domain.session.SessionMan
 import javax.inject.Inject
 
 class FakeActionUseCase @Inject constructor(private val authRepository: AuthRepository) {
-    operator fun invoke(token: String) : ActionResponse<Any> {
+    operator suspend fun invoke(token: String) : ActionResponse<Any> {
         val actionResult = authRepository.performFakeAction(token)
         Log.i("debugTag", "actionResult: $actionResult")
         if (actionResult is ActionResponse.InvalidToken) {

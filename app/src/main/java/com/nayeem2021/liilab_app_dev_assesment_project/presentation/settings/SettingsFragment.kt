@@ -16,6 +16,9 @@ import com.nayeem2021.liilab_app_dev_assesment_project.domain.session.SessionMan
 import com.nayeem2021.liilab_app_dev_assesment_project.domain.usecase.FakeActionUseCase
 import com.nayeem2021.liilab_app_dev_assesment_project.presentation.AuthMainActivity.AuthMainActivity
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -57,29 +60,43 @@ class SettingsFragment : Fragment() {
         }
 
         binding.performActionButton.setOnClickListener {
-            val token = SessionManagerImpl.getToken()
-            Log.i("debugTag", "liveData: ${SessionManagerImpl.liveData.value}")
-            if (token == null) {
-                Toast.makeText(
-                    requireContext(),
-                    "Token is NULL. Something fishy going on",
-                    Toast.LENGTH_SHORT
-                ).show()
-            } else {
-                val result = fakeAction(token!!)
-                Log.i("debugTag", "result: $result")
-                when(result) {
-                    is ActionResponse.Error -> {
-                        Toast.makeText(requireContext(), "${result.error}", Toast.LENGTH_SHORT).show()
-                    }
-                    is ActionResponse.InvalidToken -> {
-                        Toast.makeText(requireContext(), "Invalid token. Login again", Toast.LENGTH_SHORT).show()
-                        requireActivity().finish()
-                        val intent = Intent(requireContext(), AuthMainActivity::class.java)
-                        startActivity(intent)
-                    }
-                    is ActionResponse.Success -> {
-                        Toast.makeText(requireContext(), "Action performed successfully", Toast.LENGTH_SHORT).show()
+            CoroutineScope(Dispatchers.Main).launch {
+
+                val token = SessionManagerImpl.getToken()
+                Log.i("debugTag", "liveData: ${SessionManagerImpl.liveData.value}")
+                if (token == null) {
+                    Toast.makeText(
+                        requireContext(),
+                        "Token is NULL. Something fishy going on",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    val result = fakeAction(token!!)
+                    Log.i("debugTag", "result: $result")
+                    when (result) {
+                        is ActionResponse.Error -> {
+                            Toast.makeText(requireContext(), "${result.error}", Toast.LENGTH_SHORT)
+                                .show()
+                        }
+
+                        is ActionResponse.InvalidToken -> {
+                            Toast.makeText(
+                                requireContext(),
+                                "Invalid token. Login again",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            requireActivity().finish()
+                            val intent = Intent(requireContext(), AuthMainActivity::class.java)
+                            startActivity(intent)
+                        }
+
+                        is ActionResponse.Success -> {
+                            Toast.makeText(
+                                requireContext(),
+                                "Action performed successfully",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     }
                 }
             }

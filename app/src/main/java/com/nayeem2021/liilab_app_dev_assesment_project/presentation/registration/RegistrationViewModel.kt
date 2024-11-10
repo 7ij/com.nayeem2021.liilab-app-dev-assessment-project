@@ -7,6 +7,9 @@ import com.nayeem2021.liilab_app_dev_assesment_project.domain.usecase.Registrati
 import com.nayeem2021.liilab_app_dev_assesment_project.domain.usecase.RegistrationUseCase
 import com.nayeem2021.liilab_app_dev_assesment_project.model.ProfileData
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
@@ -31,12 +34,23 @@ class RegistrationViewModel @Inject constructor(
 
     private suspend fun handleSubmitButtonClick(profileData: ProfileData) {
         val result = formDataValidate(profileData)
-        if(result.overallOk) {
+        if (result.overallOk) {
             uiEffects.emit(RegistrationUiEffects.Loading)
-            val result = requestRegistration(profileData)
-            when(result) {
-                is RegistrationStatus.Success -> uiEffects.emit(RegistrationUiEffects.RegistrationSuccessful)
-                is RegistrationStatus.Failure -> uiEffects.emit(RegistrationUiEffects.Error(result.errorMessage))
+            CoroutineScope(Dispatchers.IO).launch {
+                val result = async {
+                    requestRegistration(profileData)
+                }.await()
+
+                CoroutineScope(Dispatchers.Main).launch {
+                    when (result) {
+                        is RegistrationStatus.Success -> uiEffects.emit(RegistrationUiEffects.RegistrationSuccessful)
+                        is RegistrationStatus.Failure -> uiEffects.emit(
+                            RegistrationUiEffects.Error(
+                                result.errorMessage
+                            )
+                        )
+                    }
+                }
             }
 
         } else {

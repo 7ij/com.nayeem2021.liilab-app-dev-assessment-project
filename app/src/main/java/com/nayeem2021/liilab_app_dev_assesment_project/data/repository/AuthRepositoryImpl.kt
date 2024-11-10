@@ -11,22 +11,22 @@ import javax.inject.Inject
 
 class AuthRepositoryImpl @Inject constructor(private val localDataSource: UserLocalDataSource) :
     AuthRepository {
-    override fun login(loginData: LoginData): LoginResponse {
+    override suspend fun login(loginData: LoginData): LoginResponse {
         val loginResult = localDataSource.login(loginData)
         return loginResult
     }
 
-    override fun register(profileData: ProfileData): RegistrationStatus {
+    override suspend fun register(profileData: ProfileData): RegistrationStatus {
         val registerResult = localDataSource.register(profileData)
         return if (registerResult) RegistrationStatus.Success
         else RegistrationStatus.Failure("Something went wrong")
     }
 
-    override fun checkLoginValidity(token: String): Boolean {
+    override suspend fun checkLoginValidity(token: String): Boolean {
         return localDataSource.isTokenValid(token)
     }
 
-    override fun performFakeAction(token: String): ActionResponse<Any> {
+    override suspend fun performFakeAction(token: String): ActionResponse<Any> {
         val actionResult = localDataSource.performOperationWithToken(token)
         return when (actionResult) {
             "SUCCESS" -> return ActionResponse.Success<Any>("SUCCESS")
