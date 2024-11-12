@@ -1,5 +1,6 @@
 package com.nayeem2021.liilab_app_dev_assesment_project.data.repository
 
+import android.util.Log
 import com.nayeem2021.liilab_app_dev_assesment_project.data.model.ActionResponse
 import com.nayeem2021.liilab_app_dev_assesment_project.data.model.LoginResponse
 import com.nayeem2021.liilab_app_dev_assesment_project.data.source.local.Database
@@ -17,6 +18,7 @@ class AuthRepositoryImplRoom @Inject constructor(private val roomDb: Database) :
     override suspend fun login(loginData: LoginData): LoginResponse {
         val deffered = GlobalScope.async(Dispatchers.IO) {
             val allUsers = roomDb.userDao().getAllUser()
+            Log.i("lolita", "allusers: $allUsers")
             for (user in allUsers) {
                 if (user.userName == loginData.username &&
                     user.password == loginData.password

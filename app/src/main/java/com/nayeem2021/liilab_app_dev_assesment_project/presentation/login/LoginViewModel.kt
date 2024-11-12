@@ -1,5 +1,6 @@
 package com.nayeem2021.liilab_app_dev_assesment_project.presentation.login
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -26,6 +27,7 @@ class LoginViewModel @Inject constructor(val loginUseCase: LoginUseCase) : ViewM
             }.await()
             CoroutineScope(Dispatchers.Main).launch {
                 _loginData.value = res
+                Log.i("lolita", "res: $res")
             }
         }
     }

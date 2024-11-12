@@ -34,7 +34,7 @@ class RegistrationViewModel @Inject constructor(
 
     private suspend fun handleSubmitButtonClick(profileData: ProfileData) {
         val result = formDataValidate(profileData)
-        if (result.overallOk) {
+        if (true) {
             uiEffects.emit(RegistrationUiEffects.Loading)
             CoroutineScope(Dispatchers.IO).launch {
                 val result = async {
