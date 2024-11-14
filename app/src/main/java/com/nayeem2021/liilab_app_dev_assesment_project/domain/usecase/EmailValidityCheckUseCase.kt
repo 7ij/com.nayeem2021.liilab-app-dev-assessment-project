@@ -5,8 +5,6 @@ import com.nayeem2021.liilab_app_dev_assesment_project.model.ProfileData
 
 class EmailValidityCheckUseCase {
     operator fun invoke(email: String): Boolean {
-        val emailRegex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
-        val emailOk = emailRegex.toRegex().matches(email)
-        return emailOk
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 }

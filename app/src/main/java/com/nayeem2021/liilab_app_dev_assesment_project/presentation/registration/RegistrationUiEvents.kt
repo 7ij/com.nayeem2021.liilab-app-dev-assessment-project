@@ -8,4 +8,8 @@ open class RegistrationUiEvents {
     // like this, for each form data, we can set trigger and then check validation while the user
     // fills the form
     // for now let's just handle through submitButtonClick
+    data class OnFinishedWritingEmail(val email: String) : RegistrationUiEvents()
+    data class onFinishedWritingPassword(val password: String): RegistrationUiEvents()
+    data class onFinishedWritingDob(val dob: String): RegistrationUiEvents()
+    data class onFinishedWritingName(val name: String): RegistrationUiEvents()
 }
